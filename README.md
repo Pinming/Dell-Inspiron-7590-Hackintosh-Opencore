@@ -1,11 +1,13 @@
 # Dell-Inspiron-7590-Hackintosh-Opencore
-OpenCore EFI for Dell Inspiron 7590 with Sharp SHP14C7.      
+OpenCore EFI for Dell Inspiron 7590 with Sharp SHP14C7.           
+【理论上】本 EFI 支持 Dell Inspiron 7590 / 7591 全系列机型。
 
-**注意 | 本 EFI 仅供参考，系统目前各个可以驱动的主要硬件运行基本正常，但无线网卡尚未测试，相关完善将在近期进行。**
+# 写在前面
+* 本 EFI 仅供参考，系统目前各个可以驱动的主要硬件运行基本正常，但无线网卡尚未测试，相关完善将在近期进行。
+* 本 EFI 在 [tctien342](https://github.com/tctien342/Dell-Inspiron-7591-Hackintosh) 的 repo 基础上修改并优化，感谢！
+* EFI 已集成 `WhateverGreen` 最新源码（`1.3.7`），夏普屏驱动问题已解决，理论上可以不使用二进制破解引导 10.15 各版本。感谢 @0xFirewolf！具体解决思路详见：https://github.com/acidanthera/WhateverGreen/pull/41
+* `config.plist` 与 `config-1080P.plist` 的异同：前者相较于后者移除了两个值：`device-id` & `AAPL,ig-platform-id`，以保证 4K 机型在 Opencore 环境下不会出现奇怪的花屏或无法进入系统等问题。即 4K 屏幕采用  `config.plist`，1080P 屏幕采用 `config-1080P.plist` 即可。
 
-**建议先用 Clover 将系统正常安装再转换至 Opencore。本 EFI 暂未测试是否能进入安装界面。**
-
-**【本 EFI 已集成 `WhateverGreen` 最新源码（`1.3.7`），夏普屏驱动问题已解决，理论上可以不使用二进制破解引导 10.15 各版本。感谢 @0xFirewolf！具体解决思路详见：https://github.com/acidanthera/WhateverGreen/pull/41 】**
 ![](http://tva1.sinaimg.cn/large/0080xEK2ly1gbstoz9de8j312s0pun9r.jpg)
 
 # 目前存在的 Bug
