@@ -3,6 +3,8 @@ OpenCore EFI for Dell Inspiron 7590 with Sharp SHP14C7.
 
 **注意 | 本 EFI 仅供参考，系统目前各个可以驱动的主要硬件运行基本正常，但无线网卡尚未测试，相关完善将在近期进行。**
 
+**建议先用 Clover 将系统正常安装再转换至 Opencore。本 EFI 暂未测试是否能进入安装界面。**
+
 **【本 EFI 已集成 `WhateverGreen` 最新源码（`1.3.7`），夏普屏驱动问题已解决，理论上可以不使用二进制破解引导 10.15 各版本。感谢 @0xFirewolf！具体解决思路详见：https://github.com/acidanthera/WhateverGreen/pull/41 】**
 ![](http://tva1.sinaimg.cn/large/0080xEK2ly1gbstoz9de8j312s0pun9r.jpg)
 
@@ -12,6 +14,7 @@ OpenCore EFI for Dell Inspiron 7590 with Sharp SHP14C7.
 * 电池的容量 (Capacity) 识别错误，应为 97Wh，但实时电量显示基本准确
 * 偶有出现声卡掉驱动现象，推测是 `AppleALC` 与 `AppleHDA` 间的加载顺序问题，一时可能无法解决
 * HDMI 只能输出画面，不能输出声音
+* 系统初次进入默认加载 sRGB 颜色配置，观感不佳。如有需要可以自行下载 Adobe RGB 的校色文件。【[夏普 SHP14C7](http://oss.pm-z.tech/temp_files/shp14c7_adobe_6500.icm)】【[友达 AUO41EB](http://oss.pm-z.tech/temp_files/AUO41EB_adobe_6500.icm)】
 
 # 硬件配置
 
