@@ -1,5 +1,5 @@
 # Dell-Inspiron-7590-Hackintosh-Opencore
-OpenCore EFI for Dell Inspiron 7590 with Sharp SHP14C7.           
+OpenCore EFI for Dell Inspiron 759x.           
 【理论上】本 EFI 支持 Dell Inspiron 7590 / 7591 全系列机型。
 
 # 写在前面
@@ -10,6 +10,10 @@ OpenCore EFI for Dell Inspiron 7590 with Sharp SHP14C7.
 
 ![](http://tva1.sinaimg.cn/large/0080xEK2ly1gbstoz9de8j312s0pun9r.jpg)
 
+# 声卡接口修复
+在 `ComboJack` 文件夹中打开 `install.sh` 安装声卡接口守护进程，使得机器可以识别耳机接口的插拔。
+感谢 @[tctien342](https://github.com/tctien342/Dell-Inspiron-7591-Hackintosh) 的贡献！
+
 # 目前存在的 Bug
 * 无线网卡 / 雷电接口尚未测试，不确定功能可用性
 * 内置麦克风无法使用【无解】
@@ -18,7 +22,7 @@ OpenCore EFI for Dell Inspiron 7590 with Sharp SHP14C7.
 * HDMI 只能输出画面，不能输出声音
 * 系统初次进入默认加载 sRGB 颜色配置，观感不佳。如有需要可以自行下载 Adobe RGB 的校色文件。【[夏普 SHP14C7](http://oss.pm-z.tech/temp_files/shp14c7_adobe_6500.icm)】【[友达 AUO41EB](http://oss.pm-z.tech/temp_files/AUO41EB_adobe_6500.icm)】
 
-# 硬件配置
+# 测试机硬件配置
 
 ## 已驱动 / 已知可驱动
 **Dell Inspiron 7590** with Sharp SHP14C7 4K Display
