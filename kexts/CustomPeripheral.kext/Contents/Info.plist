@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.AnV_Software.driver.CustomPeripheral</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>CustomPeripheral</string>
+	<key>CFBundlePackageType</key>
+	<string>KEXT</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>8.8.8</string>
+	<key>IOKitPersonalities</key>
+	<dict>
+		<key>AnySDCardReaderAnySBC</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.apple.driver.AppleUSBCardReader</string>
+			<key>IOClass</key>
+			<string>com_apple_driver_AppleUSBCardReaderSBC</string>
+			<key>IOProviderClass</key>
+			<string>IOSCSIPeripheralDeviceNub</string>
+			<key>Peripheral Device Type</key>
+			<integer>0</integer>
+			<key>Product Identification</key>
+			<string>Multi-Card</string>
+			<key>USB Mass Storage Characteristics</key>
+			<dict>
+				<key>Max Logical Unit Number</key>
+				<integer>0</integer>
+			</dict>
+			<key>Vendor Identification</key>
+			<string>Generic-</string>
+		</dict>
+		<key>AnySDCardReaderAppleSBC</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.apple.driver.AppleUSBCardReader</string>
+			<key>IOClass</key>
+			<string>com_apple_driver_AppleUSBCardReaderSBC</string>
+			<key>IOProviderClass</key>
+			<string>IOSCSIPeripheralDeviceNub</string>
+			<key>Peripheral Device Type</key>
+			<integer>0</integer>
+			<key>Product Identification</key>
+			<string>SD Card Reader</string>
+			<key>USB Mass Storage Characteristics</key>
+			<dict>
+				<key>Max Logical Unit Number</key>
+				<integer>0</integer>
+			</dict>
+			<key>Vendor Identification</key>
+			<string>APPLE</string>
+		</dict>
+		<key>Any_Internal_SD_Card_Reader_1_00</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.apple.driver.AppleUSBCardReader</string>
+			<key>IOClass</key>
+			<string>com_apple_driver_AppleUSBCardReaderUMC</string>
+			<key>IOMediaIcon</key>
+			<dict>
+				<key>CFBundleIdentifier</key>
+				<string>com.apple.iokit.IOSCSIArchitectureModelFamily</string>
+				<key>IOBundleResourceFile</key>
+				<string>SD.icns</string>
+			</dict>
+			<key>IOProviderClass</key>
+			<string>IOUSBInterface</string>
+			<key>Physical Interconnect</key>
+			<string>USB</string>
+			<key>Physical Interconnect Location</key>
+			<string>Internal</string>
+			<key>Read Time Out Duration</key>
+			<string>30000</string>
+			<key>SCSI Device Characteristics</key>
+			<dict>
+				<key>IOMaximumBlockCountRead</key>
+				<integer>8192</integer>
+				<key>IOMaximumBlockCountWrite</key>
+				<integer>8192</integer>
+			</dict>
+			<key>Write Time Out Duration</key>
+			<string>30000</string>
+			<key>bConfigurationValue</key>
+			<integer>1</integer>
+			<key>bInterfaceNumber</key>
+			<integer>0</integer>
+			<key>idProduct</key>
+			<integer>375</integer>
+			<key>idVendor</key>
+			<integer>3034</integer>
+		</dict>
+		<key>Fake Apple Card Reader Device</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.apple.driver.AppleUSBMergeNub</string>
+			<key>IOClass</key>
+			<string>AppleUSBMergeNub</string>
+			<key>IOProviderClass</key>
+			<string>IOUSBDevice</string>
+			<key>IOProviderMergeProperties</key>
+			<dict>
+				<key>USB Product Name</key>
+				<string>Internal Memory Card Reader</string>
+				<key>USB Serial Number</key>
+				<string>000000009833</string>
+				<key>USB Vendor Name</key>
+				<string>Apple</string>
+				<key>bcdDevice</key>
+				<integer>38963</integer>
+				<key>idProduct</key>
+				<integer>33795</integer>
+				<key>idVendor</key>
+				<integer>1452</integer>
+				<key>non-removable</key>
+				<string>yes</string>
+			</dict>
+			<key>idProduct</key>
+			<integer>375</integer>
+			<key>idVendor</key>
+			<integer>3034</integer>
+		</dict>
+		<key>Fake Apple Card Reader Interface</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.apple.driver.AppleUSBMergeNub</string>
+			<key>IOClass</key>
+			<string>AppleUSBMergeNub</string>
+			<key>IOProviderClass</key>
+			<string>IOUSBInterface</string>
+			<key>IOProviderMergeProperties</key>
+			<dict>
+				<key>bcdDevice</key>
+				<integer>38963</integer>
+				<key>idProduct</key>
+				<integer>33795</integer>
+				<key>idVendor</key>
+				<integer>1452</integer>
+			</dict>
+			<key>bConfigurationValue</key>
+			<string>*</string>
+			<key>bInterfaceNumber</key>
+			<string>*</string>
+			<key>idProduct</key>
+			<integer>375</integer>
+			<key>idVendor</key>
+			<integer>3034</integer>
+		</dict>
+		<key>Fake Apple Card Reader SBC Inject</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.apple.driver.AppleUSBMergeNub</string>
+			<key>IOClass</key>
+			<string>AppleUSBMergeNub</string>
+			<key>IOProviderClass</key>
+			<string>com_apple_driver_AppleUSBCardReaderSBC</string>
+			<key>IOProviderMergeProperties</key>
+			<dict>
+				<key>Product Identification</key>
+				<string>Internal Memory Card Reader</string>
+				<key>USB Serial Number</key>
+				<string>000000009833</string>
+				<key>USB Vendor Name</key>
+				<string>Apple</string>
+			</dict>
+			<key>idProduct</key>
+			<integer>375</integer>
+			<key>idVendor</key>
+			<integer>3034</integer>
+		</dict>
+		<key>Fake Apple Card Reader SCSI Inject</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.apple.driver.AppleUSBMergeNub</string>
+			<key>IOClass</key>
+			<string>AppleUSBMergeNub</string>
+			<key>IOProviderClass</key>
+			<string>IOSCSIPeripheralDeviceNub</string>
+			<key>IOProviderMergeProperties</key>
+			<dict>
+				<key>Product Identification</key>
+				<string>SD Card Reader</string>
+				<key>Product Revision Level</key>
+				<string>1.00</string>
+				<key>Vendor Identification</key>
+				<string>APPLE</string>
+			</dict>
+			<key>Peripheral Device Type</key>
+			<integer>0</integer>
+			<key>Product Identification</key>
+			<string>Multi-Card</string>
+			<key>Vendor Identification</key>
+			<string>Generic-</string>
+		</dict>
+		<key>Fake Apple Card Reader UMC Inject</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.apple.driver.AppleUSBMergeNub</string>
+			<key>IOClass</key>
+			<string>AppleUSBMergeNub</string>
+			<key>IOProviderClass</key>
+			<string>com_apple_driver_AppleUSBCardReaderUMC</string>
+			<key>IOProviderMergeProperties</key>
+			<dict>
+				<key>Physical Interconnect Location</key>
+				<string>Internal</string>
+				<key>idProduct</key>
+				<integer>33795</integer>
+				<key>idVendor</key>
+				<integer>1452</integer>
+			</dict>
+			<key>idProduct</key>
+			<integer>375</integer>
+			<key>idVendor</key>
+			<integer>3034</integer>
+		</dict>
+		<key>Fake Built-in FaceTime HD Camera Device</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.apple.driver.AppleUSBMergeNub</string>
+			<key>IOClass</key>
+			<string>AppleUSBMergeNub</string>
+			<key>IOProviderClass</key>
+			<string>IOUSBDevice</string>
+			<key>IOProviderMergeProperties</key>
+			<dict>
+				<key>USB Product Name</key>
+				<string>FaceTime HD Camera (Built-in)</string>
+				<key>USB Serial Number</key>
+				<string>DJHB2F000LDH7FL0</string>
+				<key>USB Vendor Name</key>
+				<string>Apple Inc.</string>
+				<key>bcdDevice</key>
+				<integer>1302</integer>
+				<key>iManufacturer</key>
+				<integer>1</integer>
+				<key>iProduct</key>
+				<integer>2</integer>
+				<key>iSerialNumber</key>
+				<integer>3</integer>
+				<key>idProduct</key>
+				<integer>34057</integer>
+				<key>idVendor</key>
+				<integer>1452</integer>
+				<key>kSuspendPort</key>
+				<true/>
+				<key>non-removable</key>
+				<string>yes</string>
+			</dict>
+			<key>idProduct</key>
+			<integer>26395</integer>
+			<key>idVendor</key>
+			<integer>3141</integer>
+		</dict>
+		<key>Fake Built-in FaceTime HD Camera Interface A</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.apple.driver.AppleUSBMergeNub</string>
+			<key>IOClass</key>
+			<string>AppleUSBMergeNub</string>
+			<key>IOProviderClass</key>
+			<string>IOUSBInterface</string>
+			<key>IOProviderMergeProperties</key>
+			<dict>
+				<key>USB Interface Name</key>
+				<string>FaceTime HD Camera (Built-in)</string>
+				<key>bcdDevice</key>
+				<integer>1302</integer>
+				<key>idProduct</key>
+				<integer>34057</integer>
+				<key>idVendor</key>
+				<integer>1452</integer>
+			</dict>
+			<key>bConfigurationValue</key>
+			<string>*</string>
+			<key>bInterfaceNumber</key>
+			<integer>0</integer>
+			<key>idProduct</key>
+			<integer>26395</integer>
+			<key>idVendor</key>
+			<integer>3141</integer>
+		</dict>
+		<key>Fake Built-in FaceTime HD Camera Interface B</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.apple.driver.AppleUSBMergeNub</string>
+			<key>IOClass</key>
+			<string>AppleUSBMergeNub</string>
+			<key>IOProviderClass</key>
+			<string>IOUSBInterface</string>
+			<key>IOProviderMergeProperties</key>
+			<dict>
+				<key>USB Interface Name</key>
+				<string>FaceTime HD Camera (Built-in)</string>
+				<key>bcdDevice</key>
+				<integer>1302</integer>
+				<key>idProduct</key>
+				<integer>34057</integer>
+				<key>idVendor</key>
+				<integer>1452</integer>
+			</dict>
+			<key>bConfigurationValue</key>
+			<string>*</string>
+			<key>bInterfaceNumber</key>
+			<integer>1</integer>
+			<key>idProduct</key>
+			<integer>26395</integer>
+			<key>idVendor</key>
+			<integer>3141</integer>
+		</dict>
+	</dict>
+	<key>OSBundleRequired</key>
+	<string>Root</string>
+</dict>
+</plist>
