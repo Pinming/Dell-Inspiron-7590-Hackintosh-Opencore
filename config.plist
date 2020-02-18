@@ -58,14 +58,6 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Fake ethernet card, work with NullEthernet, please disabled it if you have compatible wifi card</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>SSDT-RMNE.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>Trackpad I2C Config</string>
 				<key>Enabled</key>
 				<true/>
@@ -138,51 +130,11 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Spoof Mac devices</string>
+				<string>Fake ethernet card, work with NullEthernet, please disabled it if you have compatible wifi card</string>
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
-				<string>SSDT-DMAC.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Spoof Mac devices</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>SSDT-MCHC.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Spoof Mac devices</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>SSDT-MEM2.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Spoof Mac devices</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>SSDT-PMCR.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Spoof Mac devices</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>SSDT-SLPB.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Spoof Mac devices</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>SSDT-XSPI.aml</string>
+				<string>SSDT-RMNE.aml</string>
 			</dict>
 		</array>
 		<key>Block</key>
@@ -193,7 +145,7 @@
 				<key>Comment</key>
 				<string>Drop CpuPm</string>
 				<key>Enabled</key>
-				<false/>
+				<true/>
 				<key>OemTableId</key>
 				<data>Q3B1UG0AAAA=</data>
 				<key>TableLength</key>
@@ -207,7 +159,7 @@
 				<key>Comment</key>
 				<string>Drop Cpu0Ist</string>
 				<key>Enabled</key>
-				<false/>
+				<true/>
 				<key>OemTableId</key>
 				<data>Q3B1MElzdAA=</data>
 				<key>TableLength</key>
@@ -831,22 +783,6 @@
 			</dict>
 			<dict>
 				<key>BundlePath</key>
-				<string>NullEthernet.kext</string>
-				<key>Comment</key>
-				<string>Fix En0 For imess and Facetime, please disabled it if you have compatible wifi card</string>
-				<key>Enabled</key>
-				<true/>
-				<key>ExecutablePath</key>
-				<string>Contents/MacOS/NullEthernet</string>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>BundlePath</key>
 				<string>AirportBrcmFixup.kext</string>
 				<key>Comment</key>
 				<string>Wifi card fix</string>
@@ -1280,9 +1216,21 @@
 				<key>Comment</key>
 				<string>Try to fix AppleALC not working properly</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Identifier</key>
 				<string>com.apple.driver.AppleHPET</string>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>MinKernel</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string></string>
+				<key>Enabled</key>
+				<false/>
+				<key>Identifier</key>
+				<string>com.apple.driver.AudioAUUC</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
@@ -1438,7 +1386,7 @@
 			<key>PowerTimeoutKernelPanic</key>
 			<true/>
 			<key>ThirdPartyDrives</key>
-			<true/>
+			<false/>
 			<key>XhciPortLimit</key>
 			<false/>
 		</dict>
@@ -1454,9 +1402,9 @@
 			<key>BuiltinTextRenderer</key>
 			<false/>
 			<key>ConsoleBehaviourOs</key>
-			<string>Graphics</string>
+			<string></string>
 			<key>ConsoleBehaviourUi</key>
-			<string>Graphics</string>
+			<string></string>
 			<key>ConsoleMode</key>
 			<string>Max</string>
 			<key>HibernateMode</key>
@@ -1483,7 +1431,7 @@
 			<key>DisplayDelay</key>
 			<integer>0</integer>
 			<key>DisplayLevel</key>
-			<integer>2147483650</integer>
+			<integer>2147483714</integer>
 			<key>Target</key>
 			<integer>0</integer>
 		</dict>
@@ -1561,9 +1509,9 @@
 			<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
 			<dict>
 				<key>boot-args</key>
-				<string>darkwake=1 #brcmfx-driver=2 #brcmfx-country=#a agdpmod=vit9696 alcid=77</string>
+				<string>npci=0x2000 darkwake=0  #brcmfx-driver=2 #brcmfx-country=#a alcid=77 keepsyms=1 agdpmod=vit9696</string>
 				<key>csr-active-config</key>
-				<data>AAAAAA==</data>
+				<data>5wMAAA==</data>
 				<key>nvda_drv</key>
 				<data>MQ==</data>
 				<key>prev-lang:kbd</key>
@@ -1620,17 +1568,17 @@
 		<key>Generic</key>
 		<dict>
 			<key>MLB</key>
-			<string>C02932270J9JP4FJC</string>
+			<string>C02953403GU0000JC</string>
 			<key>ROM</key>
 			<data>ESIzAAAA</data>
 			<key>SpoofVendor</key>
 			<false/>
 			<key>SystemProductName</key>
-			<string>MacBookPro15,1</string>
+			<string>MacBookPro15,3</string>
 			<key>SystemSerialNumber</key>
-			<string>C02Z63YKKGYG</string>
+			<string>C02ZXTYKLVCG</string>
 			<key>SystemUUID</key>
-			<string>56B13262-4DE4-422E-89B4-00A0D6BC9457</string>
+			<string>AD20EF59-8BA7-4B9E-8DA7-07D3F32748A1</string>
 		</dict>
 		<key>UpdateDataHub</key>
 		<true/>
@@ -1718,15 +1666,15 @@
 			<key>ReconnectOnResChange</key>
 			<false/>
 			<key>ReleaseUsbOwnership</key>
-			<true/>
+			<false/>
 			<key>ReplaceTabWithSpace</key>
 			<false/>
 			<key>RequestBootVarFallback</key>
-			<false/>
+			<true/>
 			<key>RequestBootVarRouting</key>
-			<false/>
+			<true/>
 			<key>SanitiseClearScreen</key>
-			<false/>
+			<true/>
 			<key>UnblockFsConnect</key>
 			<false/>
 		</dict>

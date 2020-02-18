@@ -11,6 +11,7 @@ OpenCore EFI for Dell Inspiron 759x.
 
 # 声卡接口修复
 在 `ComboJack` 文件夹中打开 `install.sh` 安装声卡接口守护进程，使得机器可以识别耳机接口的插拔。        
+在最新版的 `ComboJack` 中（2020/2/18 之后），插入耳机将自动识别，不再出现弹窗。
 感谢 @[tctien342](https://github.com/tctien342) 的贡献！
 ![](http://tva1.sinaimg.cn/large/0080xEK2ly1gbzgvhggtbj30tk0ewahj.jpg)
 
