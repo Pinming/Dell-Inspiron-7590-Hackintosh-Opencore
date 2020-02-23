@@ -20,7 +20,8 @@ Thanks to @[hackintosh-stuff](https://github.com/hackintosh-stuff/ComboJack) and
 * It can't read proper battery capacity (Should be 97 Wh instead of 85Wh). But the percentage of remaining battery is correct.
 * Audio sometime not working if mac installed in fast NVME drive, due to the loading order of `AppleALC` & `AppleHDA`.
 * HDMI can't output audio.
-* It will load the default sRGB color profile. For 4K model, it is an incorrect profile but you can apply Adobe RGB color profile for your screen to improve the color experience.<br>Download: ([Sharp SHP14C7](http://oss.pm-z.tech/temp_files/SHP14C7_ICC.zip)) ([AUO AUO41EB](http://oss.pm-z.tech/temp_files/AUO41EB_ICC.zip)<br>Each package includes all 6 profiles which are extracted from Dell PremierColor. <br>Copy .icm files to `~/Library/ColorSync/Profiles` and apply the color profile you need in `System Preferences→Displays→Color`.
+* It will load the default sRGB color profile. For 4K model, it is an incorrect profile but you can apply Adobe RGB color profile for your screen to improve the color experience.
+> Download: ([Sharp SHP14C7](http://oss.pm-z.tech/temp_files/SHP14C7_ICC.zip)) ([AUO AUO41EB](http://oss.pm-z.tech/temp_files/AUO41EB_ICC.zip))<br>Each package includes all 6 profiles which are extracted from Dell PremierColor. <br>Copy .icm files to `~/Library/ColorSync/Profiles` and apply the color profile you need in `System Preferences→Displays→Color`.
 
 # Tested Hardware
 
