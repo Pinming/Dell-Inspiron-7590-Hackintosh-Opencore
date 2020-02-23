@@ -21,7 +21,7 @@ OpenCore EFI for Dell Inspiron 759x.
 * 电池的容量 (Capacity) 识别错误，应为 97Wh，但实时电量显示基本准确
 * 偶有出现声卡掉驱动现象，推测是 `AppleALC` 与 `AppleHDA` 间的加载顺序问题，一时可能无法解决
 * HDMI 只能输出画面，不能输出声音
-* 系统初次进入默认加载 sRGB 颜色配置，对于 4K 机型，这会导致观感不佳。如有需要可以自行下载 Adobe RGB 的校色文件。<br>[夏普 SHP14C7](http://oss.pm-z.tech/temp_files/SHP14C7_ICC.zip)】【[友达 AUO41EB](http://oss.pm-z.tech/temp_files/AUO41EB_ICC.zip)】<br>压缩包内已包含 Dell PremierColor 软件中的全部六种配置文件。<br>使用方法：解压压缩包后，将需要的 .icm 文件复制到：`~/Library/ColorSync/Profiles` 中，然后在 `系统偏好设置→显示器→颜色` 中选择相应的配置文件。
+* 系统初次进入默认加载 sRGB 颜色配置，对于 4K 机型，这会导致观感不佳。如有需要可以自行下载 Adobe RGB 的校色文件。<br>【[夏普 SHP14C7](http://oss.pm-z.tech/temp_files/SHP14C7_ICC.zip)】【[友达 AUO41EB](http://oss.pm-z.tech/temp_files/AUO41EB_ICC.zip)】<br>压缩包内已包含 Dell PremierColor 软件中的全部六种配置文件。<br>使用方法：解压压缩包后，将需要的 .icm 文件复制到：`~/Library/ColorSync/Profiles` 中，然后在 `系统偏好设置→显示器→颜色` 中选择相应的配置文件。
 
 # 测试机硬件配置
 
