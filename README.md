@@ -35,10 +35,10 @@ OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pin
 * Display：Sharp SHP14C7 @ 15.6' / 4K
 * SSD：WD PC SN520 NVMe WDC 512GB SSD
 * Audio：Realtek ALC295（戴尔定制型号：ALC3254）（内置麦克风不能驱动）（Layout-ID = 77，选用 28 可能导致 kernel_task 占用过高而导致 CPU 高频不下）
+* Micro SD Card Reader：Realtek Memory Card Reader（系统属性无法识别，但可以正常使用）
 * 【计划 / 即将更换】_WLAN + Bluetooth：Broadcom DW1820A_
 
 ## 已知不可驱动
 * Nvidia Geforce GTX 1650（无解）
-* Realtek Memory Card Reader（无解）
 * Intel Wireless-AC 9560（WiFi 无解 / 仅蓝牙可有限度使用）
 * Goodix fingerpint reader（无解）

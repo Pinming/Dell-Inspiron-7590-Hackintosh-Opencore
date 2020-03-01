@@ -27,16 +27,17 @@ Thanks to @[hackintosh-stuff](https://github.com/hackintosh-stuff/ComboJack) and
 
 ## Can be driven
 **Dell Inspiron 7590** with Sharp SHP14C7 4K Display
-* CPU：Intel Core i7-9750H @ 2.60 Ghz (Boost to 4.50 Ghz)
-* IGPU：Intel Graphics UHD 630
-* RAM：Hynix DDR4 2666Mhz / 16 GB * 2 = 32 GB RAM
-* Display：Sharp SHP14C7 @ 15.6' / 4K
-* SSD：WD PC SN520 NVMe WDC 512GB SSD
-* Audio：Realtek ALC295 (ALC3254) (Internal Mic couldn't be driven) (Layout-ID = 77, if you choose 28 may lead to high CPU utilization by kernel_task）
-* 【Plan to test】_WLAN + Bluetooth：Broadcom DW1820A_
+* CPU: Intel Core i7-9750H @ 2.60 Ghz (Boost to 4.50 Ghz)
+* IGPU: Intel Graphics UHD 630
+* RAM: Hynix DDR4 2666Mhz / 16 GB * 2 = 32 GB RAM
+* Display: Sharp SHP14C7 @ 15.6' / 4K
+* SSD: WD PC SN520 NVMe WDC 512GB SSD
+* Audio: Realtek ALC295 (ALC3254) (Internal Mic couldn't be driven) (Layout-ID = 77, if you choose 28 may lead to high CPU utilization by kernel_task）
+* Micro SD Card Reader: Goodix fingerpint reader (Couldn't be recognized on system report, but could work properly)
+* 【Plan to test】_WLAN + Bluetooth: Broadcom DW1820A_
 
 ## Can not be driven
 * Nvidia Geforce GTX 1650
 * Realtek Memory Card Reader
 * Intel Wireless-AC 9560 (Only Bluetooth is available)
-* Goodix fingerpint reader
+
