@@ -39,5 +39,5 @@ Thanks to @[hackintosh-stuff](https://github.com/hackintosh-stuff/ComboJack) and
 ## Can not be driven
 * Nvidia Geforce GTX 1650
 * Realtek Memory Card Reader
-* Intel Wireless-AC 9560 (Only Bluetooth is available)
+* Intel Wireless-AC 9560
 

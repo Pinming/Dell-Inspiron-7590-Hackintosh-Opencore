@@ -40,5 +40,5 @@ OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pin
 
 ## 已知不可驱动
 * Nvidia Geforce GTX 1650（无解）
-* Intel Wireless-AC 9560（WiFi 无解 / 仅蓝牙可有限度使用）
+* Intel Wireless-AC 9560（WiFi 无解 / ~~仅蓝牙可有限度使用~~）加载 Intel 蓝牙驱动会导致启动严重拖慢，考虑后决定不再支持。待开学后换了 DW1820a 再弄蓝牙吧……
 * Goodix fingerpint reader（无解）

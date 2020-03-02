@@ -25,7 +25,7 @@ DefinitionBlock("", "SSDT", 2, "En0", "ssdtRMNE", 0x00001000)
         // The NullEthernet kext matches on this HID
         Name (_HID, "NULE0000")
         // This is the MAC address returned by the kext. Modify if necessary.
-        Name (MAC, Buffer() { 0x4a, 0xec, 0x06, 0x93, 0x0f, 0x75 })
+        Name (MAC, Buffer() { 0xec, 0x5b, 0x7f, 0x95, 0x30, 0xd5 })
         Method (_DSM, 4, NotSerialized)
         {
             If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
