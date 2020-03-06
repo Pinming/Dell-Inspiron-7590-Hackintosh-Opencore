@@ -16,12 +16,17 @@ OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pin
 感谢 @[tctien342](https://github.com/tctien342) 的贡献！
 ![](http://tva1.sinaimg.cn/large/0080xEK2ly1gbzgvhggtbj30tk0ewahj.jpg)
 
+# 更新日志
+## 2020/3/6
+* HDMI 音视频都可以输出了！
+* 修复了触摸板按压不能释放左键操作的问题（启动器中加入参数：`-btnforceclick`）
+* 加入参数 `alc-delay=500` 使得 `AppleALC` 不会过早加载导致声卡掉驱动（感谢 @lvs1974）
 # 目前存在的 Bug
+* ~~HDMI 只能输出画面，不能输出声音~~
+* 【正在测试 / 暂时不下结论】_偶有出现声卡掉驱动现象，推测是 `AppleALC` 与 `AppleHDA` 间的加载顺序问题，一时可能无法解决_
 * 无线网卡 / 雷电接口尚未测试，不确定功能可用性
-* 内置麦克风无法使用【无解】
+* 内置麦克风无法使用【目前无解】
 * 电池的容量 (Capacity) 识别错误，应为 97Wh，但实时电量显示基本准确
-* 偶有出现声卡掉驱动现象，推测是 `AppleALC` 与 `AppleHDA` 间的加载顺序问题，一时可能无法解决
-* HDMI 只能输出画面，不能输出声音
 * 系统初次进入默认加载 sRGB 颜色配置，对于 4K 机型，这会导致观感不佳。
 > 如有需要可以自行下载 Adobe RGB 的校色文件：【[夏普 SHP14C7](http://oss.pm-z.tech/temp_files/SHP14C7_ICC.zip)】【[友达 AUO41EB](http://oss.pm-z.tech/temp_files/AUO41EB_ICC.zip)】<br>压缩包内已包含 Dell PremierColor 软件中的全部六种配置文件。<br>使用方法：解压压缩包后，将需要的 .icm 文件复制到：`~/Library/ColorSync/Profiles` 中，然后在 `系统偏好设置→显示器→颜色` 中选择相应的配置文件。
 
@@ -36,7 +41,7 @@ OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pin
 * SSD：WD PC SN520 NVMe WDC 512GB SSD
 * Audio：Realtek ALC295（戴尔定制型号：ALC3254）（内置麦克风不能驱动）（Layout-ID = 77，选用 28 可能导致 kernel_task 占用过高而导致 CPU 高频不下）
 * Micro SD Card Reader：Realtek Memory Card Reader（系统属性「读卡器」一栏无法识别，但可以正常使用）
-* 【计划 / 即将更换】_WLAN + Bluetooth：Broadcom DW1820A_
+* 【计划 / 即将更换】_WLAN + Bluetooth：Broadcom DW1560_
 
 ## 已知不可驱动
 * Nvidia Geforce GTX 1650（无解）
