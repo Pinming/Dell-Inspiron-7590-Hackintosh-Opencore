@@ -18,6 +18,14 @@
 		<array>
 			<dict>
 				<key>Comment</key>
+				<string></string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>SSDT-PCI0.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
 				<string>CPU power managerment</string>
 				<key>Enabled</key>
 				<true/>
@@ -670,6 +678,17 @@
 				<string>Airport</string>
 				<key>pci-aspm-default</key>
 				<integer>0</integer>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x1f,0x3)</key>
+			<dict>
+				<key>alc-delay</key>
+				<integer>500</integer>
+				<key>alc-device-id</key>
+				<data>cJ0AAA==</data>
+				<key>alc-vendor-id</key>
+				<data>hoAAAA==</data>
+				<key>layout-id</key>
+				<integer>77</integer>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x1f,0x4)</key>
 			<dict>
@@ -1589,7 +1608,7 @@
 			<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
 			<dict>
 				<key>boot-args</key>
-				<string>debug=0x100 npci=0x2000 darkwake=1  #brcmfx-driver=2 #brcmfx-country=#a alcid=77 keepsyms=1 agdpmod=vit9696</string>
+				<string>debug=0x100 npci=0x2000 darkwake=1  #brcmfx-driver=2 #brcmfx-country=#a alcid=77 keepsyms=1 agdpmod=vit9696 -btnforceclick</string>
 				<key>csr-active-config</key>
 				<data>5wMAAA==</data>
 				<key>nvda_drv</key>
