@@ -1,7 +1,7 @@
 # Dell-Inspiron-7590-Hackintosh-Opencore
 OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pinming/Dell-Inspiron-7590-Hackintosh-Opencore/blob/master/README.en.md)_ 
 
-【理论上】本 EFI 支持 Dell Inspiron 7590 / 7591 全系列机型。
+【理论上】本 EFI 支持 Dell Inspiron 7590 / 7591 全系列机型。       
 很惭愧，只对这款机器的黑苹果进程做了一点微小的工作！🐸
 ![](http://tva1.sinaimg.cn/large/0080xEK2ly1gbzh20adfrj312s0puk0z.jpg)
 
