@@ -29,8 +29,9 @@ Added `NullEthernet.kext` so that you can test some original macOS application (
 
 # Known Problems
 * ~~HDMI can't output audio.~~
-* [Need more test & Probably have been fixed] _Audio sometime not working if mac installed in fast NVME drive, due to the loading order of `AppleALC` & `AppleHDA`._
-* [New] It won't response automatically when HDMI cable plug out. You have to set it to normal display status manually.
+* ~~Audio Card sometimes not working if mac installed in fast NVME drive, due to the loading order of `AppleALC` & `AppleHDAController`.~~
+* [New / `20.3.6`] It won't response automatically when HDMI cable plug out. You have to set it to normal display status manually.
+> Temporary Solution: After plug out HDMI cable, hold  `Option` button (`Windows` Button on Hackintosh) on `System Preferences→Displays`, and click button `Detect Displays` to re-detect the monitors.
 * Wireless Card & ThunderBolt have not been tested yet and can't confirm whether they are available.
 * Internal Microphone doesn't work.
 * It can't read proper battery capacity (Should be 97 Wh instead of 85Wh). But the percentage of remaining battery is correct.

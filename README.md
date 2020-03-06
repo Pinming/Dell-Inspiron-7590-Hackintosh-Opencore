@@ -36,13 +36,14 @@ OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pin
 * 更新 `AppleHDA`，加入参数 `alc-delay=500` 使得 `AppleALC` 不会过早加载导致声卡掉驱动（感谢 @lvs1974）
 # 目前存在的 Bug
 * ~~HDMI 只能输出画面，不能输出声音~~
-* 【正在测试 / 暂时不下结论】_偶有出现声卡掉驱动现象，推测是 `AppleALC` 与 `AppleHDA` 间的加载顺序问题，一时可能无法解决_
+* ~~偶有出现声卡掉驱动现象，推测是 `AppleALC` 与 `AppleHDAController` 间的加载顺序问题，一时可能无法解决~~
 * 【新增 @ `20.3.6`】在 HDMI 热插拔后，电脑不能正常退出投影模式（即没有识别出 HDMI 已拔出）
+    > 临时解决办法：拔除 HDMI 线后，在 `系统偏好设置→显示器`界面下按住`Option`（即`Win`键），点击右下角「侦测显示器」重新侦测接入状况即可。
 * 无线网卡 / 雷电接口尚未测试，不确定功能可用性
 * 内置麦克风无法使用【目前无解】
 * 电池的容量 (Capacity) 识别错误，应为 97Wh，但实时电量显示基本准确
 * 系统初次进入默认加载 sRGB 颜色配置，对于 4K 机型，这会导致观感不佳。
-> 如有需要可以自行下载 Adobe RGB 的校色文件：【[夏普 SHP14C7](http://oss.pm-z.tech/temp_files/SHP14C7_ICC.zip)】【[友达 AUO41EB](http://oss.pm-z.tech/temp_files/AUO41EB_ICC.zip)】<br>压缩包内已包含 Dell PremierColor 软件中的全部六种配置文件。<br>使用方法：解压压缩包后，将需要的 .icm 文件复制到：`~/Library/ColorSync/Profiles` 中，然后在 `系统偏好设置→显示器→颜色` 中选择相应的配置文件。
+    > 如有需要可以自行下载 Adobe RGB 的校色文件：【[夏普 SHP14C7](http://oss.pm-z.tech/temp_files/SHP14C7_ICC.zip)】【[友达 AUO41EB](http://oss.pm-z.tech/temp_files/AUO41EB_ICC.zip)】<br>压缩包内已包含 Dell PremierColor 软件中的全部六种配置文件。<br>使用方法：解压压缩包后，将需要的 .icm 文件复制到：`~/Library/ColorSync/Profiles` 中，然后在 `系统偏好设置→显示器→颜色` 中选择相应的配置文件。
 
 # 测试机硬件配置
 
@@ -59,5 +60,5 @@ OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pin
 
 ## 已知不可驱动
 * Nvidia Geforce GTX 1650（无解）
-* Intel Wireless-AC 9560（WiFi 无解 / ~~仅蓝牙可有限度使用~~）加载 Intel 蓝牙驱动会导致启动严重拖慢，考虑后决定不再支持。待开学后换了 DW1820a 再弄蓝牙吧……
+* Intel Wireless-AC 9560（WiFi 无解 / ~~仅蓝牙可有限度使用~~）加载 Intel 蓝牙驱动会导致启动严重拖慢，考虑后决定不再支持。待开学后换了 DW1560 或者 1820a 再弄蓝牙吧……
 * Goodix fingerpint reader（无解）
