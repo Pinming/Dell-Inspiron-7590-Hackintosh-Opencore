@@ -11,10 +11,17 @@ In theory, this EFI supports for all models of Dell Inspiron 7590 / 7591 Series.
 * Differences between `config.plist` & `config-1080P.plist`: Comparing to `config-1080P.plist`, the former has been removed two strings - `device-id` & `AAPL,ig-platform-id` to ensure that 4K screen will be normally driven and avoid some problems such as graphics glitch or stuck on booting. Therefore, `config.plist` is fit for 4K model and `config-1080P.plist` is fits for 1080P model.
 
 # Fix the Combojack Support
-Execute `install.sh` in folder `ComboJack` to install an combojack protecting process, so that your computer can make response when you plug in an audio device.
+Execute `install.sh` in folder `ComboJack` to install an combojack protecting process, so that your computer can make response when you plug in an audio device automatically.
 Thanks to @[hackintosh-stuff](https://github.com/hackintosh-stuff/ComboJack) and @[tctien342](https://github.com/tctien342).
 
 # What's New
+## 2020/2/16
+* Generalized this repo for all models of Inspiron 7590 / 7591 Series.
+* Added Color Profiles for 4K screen.
+## 2020/2/18
+Replaced `SMBIOS` from `MacbookPro15,1` by `15,3` and cleaned up SSDTs to reduce the battery consumption. Thanks to @tctien342.
+## 2020/2/24
+Added `NullEthernet.kext` so that you can test some original macOS application (e.g. `App Store` & `FaceTime`) without a built-in network card.
 ## 2020/3/6
 * Now, HDMI Port can output both of video & audio. 
 * Updated `VoodooI2C` and added argument `-btnforceclick` to make force click be same as left button. Thanks to @lvs1974.

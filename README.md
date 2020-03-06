@@ -2,6 +2,7 @@
 OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pinming/Dell-Inspiron-7590-Hackintosh-Opencore/blob/master/README.en.md)_ 
 
 【理论上】本 EFI 支持 Dell Inspiron 7590 / 7591 全系列机型。
+很惭愧，只对这款机器的黑苹果进程做了一点微小的工作！🐸
 ![](http://tva1.sinaimg.cn/large/0080xEK2ly1gbzh20adfrj312s0puk0z.jpg)
 
 # 写在前面
@@ -17,13 +18,25 @@ OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pin
 ![](http://tva1.sinaimg.cn/large/0080xEK2ly1gbzgvhggtbj30tk0ewahj.jpg)
 
 # 更新日志
+## 2020/2/16
+* 对本 repo 进行通用化处理，使其可能兼容 7590 及 7591 的全系列机型
+* 添加了来自于 `Dell PremierColor` 的校色文件，确保 4K 屏不会辣眼睛
+## 2020/2/18
+更换 `SMBIOS` 为 `MacBookPro15,3` 并优化了 SSDT 的内容，降低机器运行功耗（感谢 @tctien342）
+## 2020/2/24
+加入 `NullEthernet.kext`，便于在没有可用无线网卡的环境下实现原生白果功能
+## 2020/3/2
+* 升级 `OpenCore` 至 `0.5.6`，加入了 GUI 引导界面（鉴于 OpenCore 官方文档的建议及开发思路，待本 repo 全流程完成后将关闭 GUI，尽可能接近原生体验）
+* 移除了英特尔蓝牙驱动，以避免可能出现的启动卡顿（反正也是要换网卡的）
+
 ## 2020/3/6
-* HDMI 音视频都可以输出了！
-* 修复了触摸板按压不能释放左键操作的问题（启动器中加入参数：`-btnforceclick`）
-* 加入参数 `alc-delay=500` 使得 `AppleALC` 不会过早加载导致声卡掉驱动（感谢 @lvs1974）
+* HDMI 音视频都可以输出了！（感谢 @tctien342）
+* 更新 `VoodooI2C`，修复了触摸板按压不能释放左键操作的问题（启动器中加入参数：`-btnforceclick`）（感谢 @lvs1974）
+* 更新 `AppleHDA`，加入参数 `alc-delay=500` 使得 `AppleALC` 不会过早加载导致声卡掉驱动（感谢 @lvs1974）
 # 目前存在的 Bug
 * ~~HDMI 只能输出画面，不能输出声音~~
 * 【正在测试 / 暂时不下结论】_偶有出现声卡掉驱动现象，推测是 `AppleALC` 与 `AppleHDA` 间的加载顺序问题，一时可能无法解决_
+* 在 HDMI 热插拔后，电脑不能正常退出投影模式（即没有识别出 HDMI 已拔出）
 * 无线网卡 / 雷电接口尚未测试，不确定功能可用性
 * 内置麦克风无法使用【目前无解】
 * 电池的容量 (Capacity) 识别错误，应为 97Wh，但实时电量显示基本准确
