@@ -6,10 +6,11 @@ OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pin
 ![](http://tva1.sinaimg.cn/large/0080xEK2ly1gbzh20adfrj312s0puk0z.jpg)
 
 # 写在前面
-* 本 EFI 仅供参考，系统目前各个可以驱动的主要硬件运行基本正常，但无线网卡尚未测试，相关完善将在近期进行。
+* 本 EFI 仅供参考，系统目前各个可以驱动的主要硬件运行基本正常，但 Broadcom 无线网卡尚未测试，相关完善将在近期进行。
 * 本 EFI 在 @[tctien342](https://github.com/tctien342/Dell-Inspiron-7591-Hackintosh) 的 repo 基础上修改并优化，感谢！
 * EFI 已集成 `WhateverGreen` 最新源码（`1.3.7`），夏普屏驱动问题已解决，理论上可以不使用二进制破解引导 10.15 各版本。感谢 @[0xFirewolf](https://github.com/0xfirewolf)！具体解决思路详见：https://github.com/acidanthera/WhateverGreen/pull/41
 * `config.plist` 与 `config-1080P.plist` 的异同：前者相较于后者移除了两个值：`device-id` & `AAPL,ig-platform-id`，以保证 4K 机型在 Opencore 环境下不会出现奇怪的花屏或无法进入系统等问题。即 4K 屏幕采用  `config.plist`，1080P 屏幕采用 `config-1080P.plist` 即可。
+* 本 `config` 对于无线网卡及蓝牙的默认操作：<br>默认加载 `IntelBluetoothFirmware`；默认将 Broadcom 无线网卡的各项驱动安置在 `\OC\kexts` 文件夹中但**不启用**。<br>如果已经更换了 Broadcom 无线网卡，请自行将 `Kernel -> Add` 中网卡相关 kexts 的 `Enabled` 项启用，并删除 `boot-args` 中相应启动参数的 `#` 号。此外，还需在 kext 设置中屏蔽 `NullEthernet.kext` 并在 SSDT 设置中屏蔽 `SSDT-RMNE`。
 * 版本号即为更新日期。如 2020/2/18 版本的版本号则为`20.2.18`。
 
 # 声卡接口修复
@@ -18,6 +19,17 @@ OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pin
 感谢 @[tctien342](https://github.com/tctien342) 的贡献！
 ![](http://tva1.sinaimg.cn/large/0080xEK2ly1gbzgvhggtbj30tk0ewahj.jpg)
 
+# 目前存在的 Bug
+- [ x ] ~~HDMI 只能输出画面，不能输出声音~~
+- [ x ] ~~偶有出现声卡掉驱动现象，推测是 `AppleALC` 与 `AppleHDAController` 间的加载顺序问题，一时可能无法解决~~
+- [ ] 【新增 @ `20.3.6`】在 HDMI 热插拔后，电脑不能正常退出投影模式（即没有识别出 HDMI 已拔出）
+    > 临时解决办法：拔除 HDMI 线后，在 `系统偏好设置→显示器`界面下按住`Option`（即`Win`键），点击右下角「侦测显示器」重新侦测接入状况即可。
+- [ ] 短时间的合盖睡眠可能导致系统崩溃
+- [ ] 无线网卡 / 雷电接口尚未测试，不确定功能可用性
+- [ ] 内置麦克风无法使用【目前无解】
+- [ ] 电池的容量 (Capacity) 识别错误，应为 97Wh，但实时电量显示基本准确
+- [ ] 系统初次进入默认加载 sRGB 颜色配置，对于 4K 机型，这会导致观感不佳。
+    > 如有需要可以自行下载 Adobe RGB 的校色文件：【[夏普 SHP14C7](http://oss.pm-z.tech/temp_files/SHP14C7_ICC.zip)】【[友达 AUO41EB](http://oss.pm-z.tech/temp_files/AUO41EB_ICC.zip)】<br>压缩包内已包含 Dell PremierColor 软件中的全部六种配置文件。<br>使用方法：解压压缩包后，将需要的 .icm 文件复制到：`~/Library/ColorSync/Profiles` 中，然后在 `系统偏好设置→显示器→颜色` 中选择相应的配置文件。
 # 更新日志
 ## 2020/2/16
 * 对本 repo 进行通用化处理，使其可能兼容 7590 及 7591 的全系列机型
@@ -29,24 +41,15 @@ OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pin
 ## 2020/3/2
 * 升级 `OpenCore` 至 `0.5.6`，加入了 GUI 引导界面（鉴于 OpenCore 官方文档的建议及开发思路，待本 repo 全流程完成后将关闭 GUI，尽可能接近原生体验）
 * 移除了英特尔蓝牙驱动，以避免可能出现的启动卡顿（反正也是要换网卡的）
-
 ## 2020/3/6
 * HDMI 音视频都可以输出了！（感谢 @tctien342）
-* 更新 `VoodooI2C`，修复了触摸板按压不能释放左键操作的问题（启动器中加入参数：`-btnforceclick`）（感谢 @lvs1974）
 * 更新 `AppleHDA`，加入参数 `alc-delay=500` 使得 `AppleALC` 不会过早加载导致声卡掉驱动（感谢 @lvs1974）
-# 目前存在的 Bug
-* ~~HDMI 只能输出画面，不能输出声音~~
-* ~~偶有出现声卡掉驱动现象，推测是 `AppleALC` 与 `AppleHDAController` 间的加载顺序问题，一时可能无法解决~~
-* 【新增 @ `20.3.6`】在 HDMI 热插拔后，电脑不能正常退出投影模式（即没有识别出 HDMI 已拔出）
-    > 临时解决办法：拔除 HDMI 线后，在 `系统偏好设置→显示器`界面下按住`Option`（即`Win`键），点击右下角「侦测显示器」重新侦测接入状况即可。
-* 无线网卡 / 雷电接口尚未测试，不确定功能可用性
-* 内置麦克风无法使用【目前无解】
-* 电池的容量 (Capacity) 识别错误，应为 97Wh，但实时电量显示基本准确
-* 系统初次进入默认加载 sRGB 颜色配置，对于 4K 机型，这会导致观感不佳。
-    > 如有需要可以自行下载 Adobe RGB 的校色文件：【[夏普 SHP14C7](http://oss.pm-z.tech/temp_files/SHP14C7_ICC.zip)】【[友达 AUO41EB](http://oss.pm-z.tech/temp_files/AUO41EB_ICC.zip)】<br>压缩包内已包含 Dell PremierColor 软件中的全部六种配置文件。<br>使用方法：解压压缩包后，将需要的 .icm 文件复制到：`~/Library/ColorSync/Profiles` 中，然后在 `系统偏好设置→显示器→颜色` 中选择相应的配置文件。
+## 2020/3/7
+恢复添加并默认读取：`IntelBluetoothFirmware` & `IntelBluetoothInjector`，以便于在原装英特尔网卡的测试环境下使用蓝牙。如果没有需要可以自行屏蔽。
+> 关于开机读取该驱动会导致卡顿的解决办法：在 Windows 的`设备管理器`中将蓝牙驱动回滚至初始版本`21.0.0.4`即可。这一操作同时将蓝牙的固件恢复至初始状态，新固件在 macOS 下有 bug。（感谢 @DØP | Blyatmand 的提醒）
+
 
 # 测试机硬件配置
-
 ## 已驱动 / 已知可驱动
 **Dell Inspiron 7590** with Sharp SHP14C7 4K Display
 * CPU：Intel Core i7-9750H @ 2.60 Ghz (Boost to 4.50 Ghz)
