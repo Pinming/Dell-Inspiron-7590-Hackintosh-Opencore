@@ -20,8 +20,8 @@ OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pin
 ![](http://tva1.sinaimg.cn/large/0080xEK2ly1gbzgvhggtbj30tk0ewahj.jpg)
 
 # 目前存在的 Bug
-- [ x ] ~~HDMI 只能输出画面，不能输出声音~~
-- [ x ] ~~偶有出现声卡掉驱动现象，推测是 `AppleALC` 与 `AppleHDAController` 间的加载顺序问题，一时可能无法解决~~
+- [x] ~~HDMI 只能输出画面，不能输出声音~~
+- [x] ~~偶有出现声卡掉驱动现象，推测是 `AppleALC` 与 `AppleHDAController` 间的加载顺序问题，一时可能无法解决~~
 - [ ] 【新增 @ `20.3.6`】在 HDMI 热插拔后，电脑不能正常退出投影模式（即没有识别出 HDMI 已拔出）
     > 临时解决办法：拔除 HDMI 线后，在 `系统偏好设置→显示器`界面下按住`Option`（即`Win`键），点击右下角「侦测显示器」重新侦测接入状况即可。
 - [ ] 短时间的合盖睡眠可能导致系统崩溃

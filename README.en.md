@@ -17,8 +17,8 @@ Execute `install.sh` in folder `ComboJack` to install an combojack protecting pr
 Thanks to @[hackintosh-stuff](https://github.com/hackintosh-stuff/ComboJack) and @[tctien342](https://github.com/tctien342).
 
 # Known Problems
-- [ x ] ~~HDMI can't output audio.~~
-- [ x ] ~~Audio Card sometimes not working if mac installed in fast NVME drive, due to the loading order of `AppleALC` & `AppleHDAController`.~~
+- [x] ~~HDMI can't output audio.~~
+- [x] ~~Audio Card sometimes not working if mac installed in fast NVME drive, due to the loading order of `AppleALC` & `AppleHDAController`.~~
 - [ ] [New / `20.3.6`] It won't response automatically when HDMI cable plug out. You have to set it to normal display status manually.
     > Temporary Solution: After plug out HDMI cable, hold  `Option` button (`Windows` Button on Hackintosh) on `System Preferences→Displays`, and click button `Detect Displays` to re-detect the monitors.
 - [ ] Wireless Card & ThunderBolt have not been tested yet and can't confirm whether they are available.
