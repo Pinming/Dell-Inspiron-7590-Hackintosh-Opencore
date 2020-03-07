@@ -21,6 +21,7 @@ Thanks to @[hackintosh-stuff](https://github.com/hackintosh-stuff/ComboJack) and
 - [x] ~~Audio Card sometimes not working if mac installed in fast NVME drive, due to the loading order of `AppleALC` & `AppleHDAController`.~~
 - [ ] [New / `20.3.6`] It won't response automatically when HDMI cable plug out. You have to set it to normal display status manually.
     > Temporary Solution: After plug out HDMI cable, hold  `Option` button (`Windows` Button on Hackintosh) on `System Preferences→Displays`, and click button `Detect Displays` to re-detect the monitors.
+- [ ] A short time sleep with lid-closing will lead to kernel panic.
 - [ ] Wireless Card & ThunderBolt have not been tested yet and can't confirm whether they are available.
 - [ ] Internal Microphone doesn't work.
 - [ ] It can't read proper battery capacity (Should be 97 Wh instead of 85Wh). But the percentage of remaining battery is correct.
