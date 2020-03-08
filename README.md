@@ -19,17 +19,20 @@ OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pin
 感谢 @[tctien342](https://github.com/tctien342) 的贡献！
 ![](http://tva1.sinaimg.cn/large/0080xEK2ly1gbzgvhggtbj30tk0ewahj.jpg)
 
+# 4K 机型颜色配置文件
+系统初次进入默认加载 sRGB 颜色配置，对于 4K 机型，这会导致观感不佳。
+> 如有需要可以自行下载 4K 屏幕的校色文件：【[夏普 SHP14C7](http://oss.pm-z.tech/temp_files/SHP14C7_ICC.zip)】【[友达 AUO41EB](http://oss.pm-z.tech/temp_files/AUO41EB_ICC.zip)】<br>压缩包内已包含 Dell PremierColor 软件中的全部六种配置文件。<br>使用方法：解压压缩包后，将需要的 .icm 文件复制到：`~/Library/ColorSync/Profiles` 中，然后在 `系统偏好设置→显示器→颜色` 中选择相应的配置文件。<br>建议使用 `Adobe RGB` 或 `DCI-P3` 校色文件。这两款屏幕的色域覆盖为 100% Adobe RGB 和 90% DCI-P3。
+
 # 目前存在的 Bug
 - [x] ~~HDMI 只能输出画面，不能输出声音~~
 - [x] ~~偶有出现声卡掉驱动现象，推测是 `AppleALC` 与 `AppleHDAController` 间的加载顺序问题，一时可能无法解决~~
+- [x] ~~短时间的合盖睡眠可能导致系统崩溃~~
 - [ ] 【新增 @ `20.3.6`】在 HDMI 热插拔后，电脑不能正常退出投影模式（即没有识别出 HDMI 已拔出）
     > 临时解决办法：拔除 HDMI 线后，在 `系统偏好设置→显示器`界面下按住`Option`（即`Win`键），点击右下角「侦测显示器」重新侦测接入状况即可。
-- [ ] 短时间的合盖睡眠可能导致系统崩溃
 - [ ] 无线网卡 / 雷电接口尚未测试，不确定功能可用性
 - [ ] 内置麦克风无法使用【目前无解】
 - [ ] 电池的容量 (Capacity) 识别错误，应为 97Wh，但实时电量显示基本准确
-- [ ] 系统初次进入默认加载 sRGB 颜色配置，对于 4K 机型，这会导致观感不佳。
-    > 如有需要可以自行下载 Adobe RGB 的校色文件：【[夏普 SHP14C7](http://oss.pm-z.tech/temp_files/SHP14C7_ICC.zip)】【[友达 AUO41EB](http://oss.pm-z.tech/temp_files/AUO41EB_ICC.zip)】<br>压缩包内已包含 Dell PremierColor 软件中的全部六种配置文件。<br>使用方法：解压压缩包后，将需要的 .icm 文件复制到：`~/Library/ColorSync/Profiles` 中，然后在 `系统偏好设置→显示器→颜色` 中选择相应的配置文件。
+
 # 更新日志
 ## 2020/2/16
 * 对本 repo 进行通用化处理，使其可能兼容 7590 及 7591 的全系列机型
@@ -44,10 +47,12 @@ OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pin
 ## 2020/3/6
 * HDMI 音视频都可以输出了！（感谢 @tctien342）
 * 更新 `AppleHDA`，加入参数 `alc-delay=500` 使得 `AppleALC` 不会过早加载导致声卡掉驱动（感谢 @lvs1974）
+* 更新 `VoodooI2C`，加入参数 `-btnforceclick`，将按压触控板视作为触发 `Force Click`（感谢 @tctien342）
 ## 2020/3/7
 恢复添加并默认读取：`IntelBluetoothFirmware` & `IntelBluetoothInjector`，以便于在原装英特尔网卡的测试环境下使用蓝牙。如果没有需要可以自行屏蔽。
-> 关于开机读取该驱动会导致卡顿的解决办法：在 Windows 的`设备管理器`中将蓝牙驱动回滚至初始版本`21.0.0.4`即可。这一操作同时将蓝牙的固件恢复至初始状态，新固件在 macOS 下有 bug。（感谢 @DØP | Blyatmand 的提醒）
-
+    > 关于开机读取该驱动会导致卡顿的解决办法：在 Windows 的`设备管理器`中将蓝牙驱动回滚至初始版本即可。这一操作同时将蓝牙的固件恢复至初始状态，新固件在 macOS 下有 bug。（感谢 @DØP | Blyatmand 的提醒）
+## 2020/3/8
+更换 `VoodooTSCSync` 为 `CPUTSCSync`，修复睡眠死机问题（感谢 @lvs1974）
 
 # 测试机硬件配置
 ## 已驱动 / 已知可驱动
