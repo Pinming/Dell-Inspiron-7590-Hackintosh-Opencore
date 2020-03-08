@@ -751,7 +751,7 @@
 				<key>framebuffer-portcount</key>
 				<data>BAAAAA==</data>
 				<key>framebuffer-unifiedmem</key>
-				<data>AAAAgA==</data>
+				<data>AAAAwA==</data>
 				<key>hda-gfx</key>
 				<string>onboard-1</string>
 				<key>model</key>
@@ -1015,10 +1015,16 @@
 			<dict>
 				<key>BundlePath</key>
 				<string>CpuTscSync.kext</string>
+				<key>Comment</key>
+				<string></string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/CpuTscSync</string>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>MinKernel</key>
+				<string></string>
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
 			</dict>
@@ -1512,6 +1518,14 @@
 		</array>
 		<key>Boot</key>
 		<dict>
+			<key>BuiltinTextRenderer</key>
+			<false/>
+			<key>ConsoleBehaviourOs</key>
+			<string></string>
+			<key>ConsoleBehaviourUi</key>
+			<string></string>
+			<key>ConsoleMode</key>
+			<string></string>
 			<key>HibernateMode</key>
 			<string>None</string>
 			<key>HideAuxiliary</key>
@@ -1524,12 +1538,16 @@
 			<string>Builtin</string>
 			<key>PollAppleHotKeys</key>
 			<false/>
+			<key>Resolution</key>
+			<string></string>
 			<key>ShowPicker</key>
 			<true/>
 			<key>TakeoffDelay</key>
 			<integer>0</integer>
 			<key>Timeout</key>
 			<integer>15</integer>
+			<key>UsePicker</key>
+			<true/>
 		</dict>
 		<key>Debug</key>
 		<dict>
@@ -1571,6 +1589,10 @@
 			<integer>6</integer>
 			<key>HaltLevel</key>
 			<integer>2147483648</integer>
+			<key>RequireSignature</key>
+			<false/>
+			<key>RequireVault</key>
+			<false/>
 			<key>ScanPolicy</key>
 			<integer>0</integer>
 			<key>Vault</key>
@@ -1783,6 +1805,8 @@
 			<false/>
 			<key>AppleUserInterfaceTheme</key>
 			<false/>
+			<key>ConsoleControl</key>
+			<false/>
 			<key>DataHub</key>
 			<false/>
 			<key>DeviceProperties</key>
@@ -1798,16 +1822,28 @@
 		</dict>
 		<key>Quirks</key>
 		<dict>
+			<key>ClearScreenOnModeSwitch</key>
+			<false/>
 			<key>ExitBootServicesDelay</key>
 			<integer>0</integer>
 			<key>IgnoreInvalidFlexRatio</key>
 			<false/>
+			<key>IgnoreTextInGraphics</key>
+			<false/>
+			<key>ProvideConsoleGop</key>
+			<false/>
+			<key>ReconnectOnResChange</key>
+			<false/>
 			<key>ReleaseUsbOwnership</key>
 			<true/>
+			<key>ReplaceTabWithSpace</key>
+			<false/>
 			<key>RequestBootVarFallback</key>
 			<true/>
 			<key>RequestBootVarRouting</key>
 			<true/>
+			<key>SanitiseClearScreen</key>
+			<false/>
 			<key>UnblockFsConnect</key>
 			<false/>
 		</dict>

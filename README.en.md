@@ -24,8 +24,8 @@ It will load the default sRGB color profile. For 4K model, it is an incorrect pr
 - [x] ~~HDMI can't output audio.~~
 - [x] ~~Audio Card sometimes not working if mac installed in fast NVME drive, due to the loading order of `AppleALC` & `AppleHDAController`.~~
 - [x] ~~A short time sleep with lid-closing will lead to kernel panic.~~
-- [ ] [New / `20.3.6`] It won't response automatically when HDMI cable plug out. You have to set it to normal display status manually.
-    > Temporary Solution: After plug out HDMI cable, hold  `Option` button (`Windows` Button on Hackintosh) on `System Preferences→Displays`, and click button `Detect Displays` to re-detect the monitors.
+- [x] ~~It won't response automatically when HDMI cable plug out. You have to set it to normal display status manually.~~
+    > ~~Temporary Solution: After plug out HDMI cable, hold  `Option` button (`Windows` Button on Hackintosh) on `System Preferences→Displays`, and click button `Detect Displays` to re-detect the monitors.~~
 - [ ] Wireless Card & ThunderBolt have not been tested yet and can't confirm whether they are available.
 - [ ] Internal Microphone doesn't work.
 - [ ] It can't read proper battery capacity (Should be 97 Wh instead of 85Wh). But the percentage of remaining battery is correct.
@@ -46,7 +46,9 @@ Added `NullEthernet.kext` so that you can test some original macOS application (
 Added `IntelBluetoothFirmware` & `IntelBluetoothInjector` again.
 > The solution to slow booting due to loading these kexts:<br>Roll back the Intel Bluetooth driver to initial version in `Devices Manager` on Windows. It will roll back the firmware of bluetooth too. New firmware maybe imcompatible with macOS.
 ## 2020/3/8
-Replaced `VoodooTSCSync` with `CPUTSCSync` to fix kernel panic after wake up from sleep.
+* Replaced `VoodooTSCSync` with `CPUTSCSync` to fix kernel panic after wake up from sleep.
+* Fixed recognization of HDMI plug-out.
+* Modified stolen memory of UHD630 to 3072MB.
 
 # Tested Hardware
 ## Can be driven
@@ -63,5 +65,5 @@ Replaced `VoodooTSCSync` with `CPUTSCSync` to fix kernel panic after wake up fro
 ## Can not be driven
 * Nvidia Geforce GTX 1650
 * Goodix fingerpint reader
-* Intel Wireless-AC 9560
+* Intel Wireless-AC 9560 (Only bluetooth can be driven)
 
