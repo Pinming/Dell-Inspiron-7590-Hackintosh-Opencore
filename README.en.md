@@ -17,13 +17,13 @@ Execute `install.sh` in folder `ComboJack` to install an combojack protecting pr
 Thanks to @[hackintosh-stuff](https://github.com/hackintosh-stuff/ComboJack) and @[tctien342](https://github.com/tctien342).
 
 # Color Profiles for 4K Screen
-It will load the default sRGB color profile. For 4K model, it is an incorrect profile but you can apply Adobe RGB color profile for your screen to improve the color experience.
+It will load the default sRGB color profile. For 4K model, it is an incorrect profile but you can apply other color profiles for your screen to improve the color experience.
 > Download: ([Sharp SHP14C7](http://oss.pm-z.tech/temp_files/SHP14C7_ICC.zip)) ([AUO AUO41EB](http://oss.pm-z.tech/temp_files/AUO41EB_ICC.zip))<br>Each package includes all 6 profiles which are extracted from Dell PremierColor. <br>Copy .icm files to `~/Library/ColorSync/Profiles` and apply the color profile you need in `System Preferences→Displays→Color`.<br>Using `Adobe RGB` or `DCI-P3` profile is recommended, due to the 4K screen covers 100% Adobe RGB and 90% DCI-P3.
 
 # Known Problems
 - [x] ~~HDMI can't output audio.~~
 - [x] ~~Audio Card sometimes not working if mac installed in fast NVME drive, due to the loading order of `AppleALC` & `AppleHDAController`.~~
-- [ ] A short time sleep with lid-closing will lead to kernel panic.
+- [x] ~~A short time sleep with lid-closing will lead to kernel panic.~~
 - [ ] [New / `20.3.6`] It won't response automatically when HDMI cable plug out. You have to set it to normal display status manually.
     > Temporary Solution: After plug out HDMI cable, hold  `Option` button (`Windows` Button on Hackintosh) on `System Preferences→Displays`, and click button `Detect Displays` to re-detect the monitors.
 - [ ] Wireless Card & ThunderBolt have not been tested yet and can't confirm whether they are available.
