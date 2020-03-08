@@ -18,14 +18,6 @@
 		<array>
 			<dict>
 				<key>Comment</key>
-				<string></string>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>SSDT-PCI0.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>CPU power managerment</string>
 				<key>Enabled</key>
 				<true/>
@@ -710,18 +702,12 @@
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
 			<dict>
-				<key>Comment-con1-con2</key>
-				<string>Type C port; can have 2 DisplayPort connectors</string>
-				<key>Comment-con3</key>
-				<string>HDMI port</string>
-				<key>Comment-dpcd-max-link-rate</key>
-				<string>0x14 for 4k displays, or 0x0a for 1080p</string>
-				<key>Comment-fb-portcount</key>
-				<string>There are 4 ports: internal LCD, Type C DP 1 and 2, and HDMI</string>
-				<key>dpcd-max-link-rate</key>
-				<data>CgAAAA==</data>
-				<key>enable-cfl-backlight-fix</key>
+				<key>AAPL,ig-platform-id</key>
+				<data>CQClPg==</data>
+				<key>disable-external-gpu</key>
 				<data>AQAAAA==</data>
+				<key>dpcd-max-link-rate</key>
+				<data>FAAAAA==</data>
 				<key>enable-dpcd-max-link-rate-fix</key>
 				<data>AQAAAA==</data>
 				<key>enable-hdmi-dividers-fix</key>
@@ -739,23 +725,19 @@
 				<key>framebuffer-con2-enable</key>
 				<data>AQAAAA==</data>
 				<key>framebuffer-con3-alldata</key>
-				<data>AwQKAAAIAACHAQAA</data>
+				<data>AwcKAAAIAACHAQAA</data>
 				<key>framebuffer-con3-enable</key>
 				<data>AQAAAA==</data>
 				<key>framebuffer-con3-has-lspcon</key>
 				<data>AQAAAA==</data>
-				<key>framebuffer-con3-preferred-lspcon-mode</key>
+				<key>framebuffer-con3-pipe</key>
 				<data>AQAAAA==</data>
 				<key>framebuffer-patch-enable</key>
 				<data>AQAAAA==</data>
 				<key>framebuffer-portcount</key>
 				<data>BAAAAA==</data>
 				<key>framebuffer-unifiedmem</key>
-				<data>AAAAwA==</data>
-				<key>hda-gfx</key>
-				<string>onboard-1</string>
-				<key>model</key>
-				<string>Intel UHD Graphics 630 (Mobile) </string>
+				<data>AAAAgA==</data>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x4,0x0)</key>
 			<dict>

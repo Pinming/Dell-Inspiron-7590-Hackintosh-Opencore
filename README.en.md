@@ -26,6 +26,7 @@ It will load the default sRGB color profile. For 4K model, it is an incorrect pr
 - [x] ~~A short time sleep with lid-closing will lead to kernel panic.~~
 - [x] ~~It won't response automatically when HDMI cable plug out. You have to set it to normal display status manually.~~
     > ~~Temporary Solution: After plug out HDMI cable, hold  `Option` button (`Windows` Button on Hackintosh) on `System Preferences→Displays`, and click button `Detect Displays` to re-detect the monitors.~~
+- [ ] Graphics will glitch when HDMI connecting on 1080P model.
 - [ ] Wireless Card & ThunderBolt have not been tested yet and can't confirm whether they are available.
 - [ ] Internal Microphone doesn't work.
 - [ ] It can't read proper battery capacity (Should be 97 Wh instead of 85Wh). But the percentage of remaining battery is correct.
