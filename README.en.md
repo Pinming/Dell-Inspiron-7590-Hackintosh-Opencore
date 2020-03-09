@@ -21,12 +21,12 @@ It will load the default sRGB color profile. For 4K model, it is an incorrect pr
 > Download: ([Sharp SHP14C7](http://oss.pm-z.tech/temp_files/SHP14C7_ICC.zip)) ([AUO AUO41EB](http://oss.pm-z.tech/temp_files/AUO41EB_ICC.zip))<br>Each package includes all 6 profiles which are extracted from Dell PremierColor. <br>Copy .icm files to `~/Library/ColorSync/Profiles` and apply the color profile you need in `System Preferences→Displays→Color`.<br>Using `Adobe RGB` or `DCI-P3` profile is recommended, due to the 4K screen covers 100% Adobe RGB and 90% DCI-P3.
 
 # Known Problems
-- [x] ~~HDMI can't output audio.~~
+- [x] ~~HDMI can't output audio on 4K model.~~
 - [x] ~~Audio Card sometimes not working if mac installed in fast NVME drive, due to the loading order of `AppleALC` & `AppleHDAController`.~~
 - [x] ~~A short time sleep with lid-closing will lead to kernel panic.~~
 - [x] ~~It won't response automatically when HDMI cable plug out. You have to set it to normal display status manually.~~
     > ~~Temporary Solution: After plug out HDMI cable, hold  `Option` button (`Windows` Button on Hackintosh) on `System Preferences→Displays`, and click button `Detect Displays` to re-detect the monitors.~~
-- [ ] Graphics will glitch when HDMI connecting on 1080P model.
+- [ ] HDMI can't output audio on 1080P model.
 - [ ] Wireless Card & ThunderBolt have not been tested yet and can't confirm whether they are available.
 - [ ] Internal Microphone doesn't work.
 - [ ] It can't read proper battery capacity (Should be 97 Wh instead of 85Wh). But the percentage of remaining battery is correct.
@@ -50,6 +50,8 @@ Added `IntelBluetoothFirmware` & `IntelBluetoothInjector` again.
 * Replaced `VoodooTSCSync` with `CPUTSCSync` to fix kernel panic after wake up from sleep.
 * Fixed recognization of HDMI plug-out.
 * Modified stolen memory of UHD630 to 3072MB.
+## 2020/3/9
+Fixed graphics glitch on external screen when using HDMI connection on 1080P model. (Thanks to @Arien for testing)
 
 # Tested Hardware
 ## Can be driven

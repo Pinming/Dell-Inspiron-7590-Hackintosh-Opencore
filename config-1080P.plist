@@ -675,10 +675,6 @@
 			<dict>
 				<key>alc-delay</key>
 				<integer>500</integer>
-				<key>alc-device-id</key>
-				<data>cJ0AAA==</data>
-				<key>alc-vendor-id</key>
-				<data>hoAAAA==</data>
 				<key>layout-id</key>
 				<integer>77</integer>
 			</dict>
@@ -738,6 +734,10 @@
 				<data>BAAAAA==</data>
 				<key>framebuffer-unifiedmem</key>
 				<data>AAAAgA==</data>
+				<key>hda-gfx</key>
+				<string>onboard-1</string>
+				<key>model</key>
+				<string>Intel UHD Graphics 630</string>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x4,0x0)</key>
 			<dict>
