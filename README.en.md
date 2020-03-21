@@ -2,7 +2,7 @@
 OpenCore EFI for Dell Inspiron 759x.
 
 In theory, this EFI supports for all models of Dell Inspiron 7590 / 7591 Series.
-![](http://tva1.sinaimg.cn/large/0080xEK2ly1gbzh20adfrj312s0puk0z.jpg)
+![](https://tva1.sinaimg.cn/large/0080xEK2ly1gd1t0cm1u6j31hc0u07wj.jpg)
 
 # Introduction
 * The EFI for reference only in present. All hardware can normally work but wireless card have not been tested yet.
