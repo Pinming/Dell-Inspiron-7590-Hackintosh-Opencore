@@ -3,7 +3,7 @@ OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pin
 
 【理论上】本 EFI 支持 Dell Inspiron 7590 / 7591 全系列机型。       
 很惭愧，只对这款机器的黑苹果进程做了一点微小的工作！🐸
-![](https://tva1.sinaimg.cn/large/0080xEK2ly1gd1t0cm1u6j31hc0u07wj.jpg)
+![](http://tva1.sinaimg.cn/large/0080xEK2ly1gd1t0cm1u6j31hc0u07wj.jpg)
 
 # 写在前面
 * 本 EFI 仅供参考，系统目前各个可以驱动的主要硬件运行基本正常，但 Broadcom 无线网卡尚未测试，相关完善将在近期进行。
