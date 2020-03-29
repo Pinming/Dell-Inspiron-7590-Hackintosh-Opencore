@@ -1,8 +1,8 @@
 # Dell-Inspiron-7590-Hackintosh-Opencore
 OpenCore EFI for Dell Inspiron 759x.
-
+✅ Current macOS version: `10.15.4` / Current EFI version: `20.3.9`
 In theory, this EFI supports for all models of Dell Inspiron 7590 / 7591 Series.
-![](http://tva1.sinaimg.cn/large/0080xEK2ly1gd1t0cm1u6j31hc0u07wj.jpg)
+![](https://tva1.sinaimg.cn/large/0080xEK2ly1gday15hkgaj31hc0u04qp.jpg)
 
 # Introduction
 * The EFI for reference only in present. All hardware can normally work but wireless card have not been tested yet.
@@ -52,6 +52,8 @@ Added `IntelBluetoothFirmware` & `IntelBluetoothInjector` again.
 * Modified stolen memory of UHD630 to 3072MB.
 ## 2020/3/9
 Fixed graphics glitch on external screen when using HDMI connection on 1080P model. (Thanks to @Arien for testing)
+## 2020/3/25
+The macOS has been upgraded to `10.15.4`.
 
 # Tested Hardware
 ## Can be driven

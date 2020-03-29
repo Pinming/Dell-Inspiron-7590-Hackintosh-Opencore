@@ -1,9 +1,9 @@
 # Dell-Inspiron-7590-Hackintosh-Opencore
 OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pinming/Dell-Inspiron-7590-Hackintosh-Opencore/blob/master/README.en.md)_ 
-
+✅ 当前 macOS 版本 `10.15.4` / 当前 EFI 包版本 `20.3.9`
 【理论上】本 EFI 支持 Dell Inspiron 7590 / 7591 全系列机型。       
 很惭愧，只对这款机器的黑苹果进程做了一点微小的工作！🐸
-![](http://tva1.sinaimg.cn/large/0080xEK2ly1gd1t0cm1u6j31hc0u07wj.jpg)
+![](https://tva1.sinaimg.cn/large/0080xEK2ly1gday15hkgaj31hc0u04qp.jpg)
 
 # 写在前面
 * 本 EFI 仅供参考，系统目前各个可以驱动的主要硬件运行基本正常，但 Broadcom 无线网卡尚未测试，相关完善将在近期进行。
@@ -58,6 +58,8 @@ OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pin
 * 修改 UHD630 的显存为 3072MB（虽然不知道有什么卵用）
 ## 2020/3/9
 修复了 1080P 机型 HDMI 外接显示器花屏（感谢 @Ariel 的测试）
+## 2020/3/26
+已无痛升级至 `10.15.4`，各项功能正常
 
 # 测试机硬件配置
 ## 已驱动 / 已知可驱动
