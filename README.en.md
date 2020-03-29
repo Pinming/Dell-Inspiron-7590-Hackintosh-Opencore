@@ -1,6 +1,6 @@
 # Dell-Inspiron-7590-Hackintosh-Opencore
-OpenCore EFI for Dell Inspiron 759x.
-✅ Current macOS version: `10.15.4` / Current EFI version: `20.3.9`
+OpenCore EFI for Dell Inspiron 759x.        
+✅ Current macOS version: `10.15.4` / Current EFI version: `20.3.9`      
 In theory, this EFI supports for all models of Dell Inspiron 7590 / 7591 Series.
 ![](https://tva1.sinaimg.cn/large/0080xEK2ly1gday15hkgaj31hc0u04qp.jpg)
 
