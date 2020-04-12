@@ -1,6 +1,6 @@
 # Dell-Inspiron-7590-Hackintosh-Opencore
 OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pinming/Dell-Inspiron-7590-Hackintosh-Opencore/blob/master/README.en.md)_       
-✅ 当前 macOS 版本 `10.15.4` / 当前 EFI 包版本 `20.3.9`       
+✅ 当前 macOS 版本 `10.15.4` / 当前 EFI 包版本 `20.4.12`       
 【理论上】本 EFI 支持 Dell Inspiron 7590 / 7591 全系列机型。       
 很惭愧，只对这款机器的黑苹果进程做了一点微小的工作！🐸
 ![](https://tva1.sinaimg.cn/large/0080xEK2ly1gday15hkgaj31hc0u04qp.jpg)
@@ -8,9 +8,9 @@ OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pin
 # 写在前面
 * 本 EFI 仅供参考，系统目前各个可以驱动的主要硬件运行基本正常，但 Broadcom 无线网卡尚未测试，相关完善将在近期进行。
 * 本 EFI 在 @[tctien342](https://github.com/tctien342/Dell-Inspiron-7591-Hackintosh) 的 repo 基础上修改并优化，感谢！
-* EFI 已集成 `WhateverGreen` 最新源码（`1.3.7`），夏普屏驱动问题已解决，理论上可以不使用二进制破解引导 10.15 各版本。感谢 @[0xFirewolf](https://github.com/0xfirewolf)！具体解决思路详见：https://github.com/acidanthera/WhateverGreen/pull/41
+* EFI 已集成 `WhateverGreen` 最新源码（`1.3.8`），夏普屏驱动问题已解决，理论上可以不使用二进制破解引导 10.15 各版本。感谢 @[0xFirewolf](https://github.com/0xfirewolf)！具体解决思路详见：https://github.com/acidanthera/WhateverGreen/pull/41
 * `config.plist` 与 `config-1080P.plist` 的异同：前者相较于后者移除了两个值：`device-id` & `AAPL,ig-platform-id`，以保证 4K 机型在 Opencore 环境下不会出现奇怪的花屏或无法进入系统等问题。即 4K 屏幕采用  `config.plist`，1080P 屏幕采用 `config-1080P.plist` 即可。
-* 本 `config` 对于无线网卡及蓝牙的默认操作：<br>默认加载 `IntelBluetoothFirmware`；默认将 Broadcom 无线网卡的各项驱动安置在 `\OC\kexts` 文件夹中但**不启用**。<br>如果已经更换了 Broadcom 无线网卡，请自行将 `Kernel -> Add` 中网卡相关 kexts 的 `Enabled` 项启用，并删除 `boot-args` 中相应启动参数的 `#` 号。此外，还需在 kext 设置中屏蔽 `NullEthernet.kext` 并在 SSDT 设置中屏蔽 `SSDT-RMNE`。
+* 【⚠️ **重要**】**本 `config` 对于无线网卡及蓝牙的默认操作**：<br>默认加载 `IntelBluetoothFirmware`；默认将 Broadcom 无线网卡的各项驱动安置在 `\OC\kexts` 文件夹中但**不启用**。<br>如果已经更换了 Broadcom 无线网卡，请自行将 `Kernel -> Add` 中网卡相关 kexts 的 `Enabled` 项启用，并删除 `boot-args` 中相应启动参数的 `#` 号。此外，还需在 kext 设置中屏蔽 `NullEthernet.kext` 并在 SSDT 设置中屏蔽 `SSDT-RMNE`。
 * 版本号即为更新日期。如 2020/2/18 版本的版本号则为`20.2.18`。
 
 # 声卡接口修复
@@ -51,7 +51,7 @@ OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pin
 * 更新 `VoodooI2C`，加入参数 `-btnforceclick`，将按压触控板视作为触发 `Force Click`（感谢 @tctien342）
 ## 2020/3/7
 恢复添加并默认读取：`IntelBluetoothFirmware` & `IntelBluetoothInjector`，以便于在原装英特尔网卡的测试环境下使用蓝牙。如果没有需要可以自行屏蔽。
-> 关于开机读取该驱动会导致卡顿的解决办法：在 Windows 的`设备管理器`中将蓝牙驱动回滚至初始版本即可。这一操作同时将蓝牙的固件恢复至初始状态，新固件在 macOS 下有 bug。（感谢 @DØP | Blyatmand 的提醒）
+> 关于开机读取该驱动会导致卡顿的解决办法：在 Windows 的`设备管理器`中将蓝牙驱动回滚至初始版本即可。这一操作同时将蓝牙的固件恢复至初始状态，新固件在 macOS 下有 bug。（感谢 @DØP | Blyatman 的提示）
 ## 2020/3/8
 * 更换 `VoodooTSCSync` 为 `CPUTSCSync`，修复睡眠死机问题（感谢 @lvs1974）
 * 修复了 HDMI 热插拔识别
@@ -60,6 +60,9 @@ OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pin
 修复了 1080P 机型 HDMI 外接显示器花屏（感谢 @Ariel 的测试）
 ## 2020/3/26
 已无痛升级至 `10.15.4`，各项功能正常
+## 2020/4/12
+* 更新 `OpenCore` 至 `0.5.8 (20200410)` 版本
+* 更新 `WhateverGreen` 至 `1.3.8` 版本，解决部分机型睡眠后黑屏问题（感谢 @kihsu 的提示）
 
 # 测试机硬件配置
 ## 已驱动 / 已知可驱动

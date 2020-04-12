@@ -7,9 +7,9 @@ In theory, this EFI supports for all models of Dell Inspiron 7590 / 7591 Series.
 # Introduction
 * The EFI for reference only in present. All hardware can normally work but wireless card have not been tested yet.
 * The EFI is based on @[tctien342](https://github.com/tctien342/Dell-Inspiron-7591-Hackintosh)'s repo. Thanks!
-* The EFI has included the latest source code of `WhateverGreen` (`1.3.7`) ,it solved the problem on the Sharp SHP14C7 4K screen. Now it can boot any version of macOS 10.15 without binary patches.
+* The EFI has included the latest source code of `WhateverGreen` (`1.3.8`) ,it solved the problem on the Sharp SHP14C7 4K screen. Now it can boot any version of macOS 10.15 without binary patches.
 * Differences between `config.plist` & `config-1080P.plist`: Comparing to `config-1080P.plist`, the former has been removed two strings - `device-id` & `AAPL,ig-platform-id` to ensure that 4K screen will be normally driven and avoid some problems such as graphics glitch or stuck on booting. Therefore, `config.plist` is fit for 4K model and `config-1080P.plist` is fits for 1080P model.
-* Default strategy for Bluetooth & WIFI: <br> The default settings are loading `IntelBluetoothFirmware` and put each kexts for Broadcom Wireless Card into `\OC\Kexts` folder but **disabled** it in `config.plist`. <br>If you have replaced a Broadcom one, goto `config.plist -> Kernel -> Add` to enable them and disable `NullEthernet.kext`. In addition, goto `config.plist -> ACPI` to disable `SSDT-RMNE`. 
+* [⚠️ **IMPORTANT**] **Default strategy for Bluetooth & WIFI**: <br> The default settings are loading `IntelBluetoothFirmware` and put each kexts for Broadcom Wireless Card into `\OC\Kexts` folder but **disabled** it in `config.plist`. <br>If you have replaced a Broadcom one, goto `config.plist -> Kernel -> Add` to enable them and disable `NullEthernet.kext`. In addition, goto `config.plist -> ACPI` to disable `SSDT-RMNE`. 
 * Version number is same as the date of each commit. (e.g. `20.3.6` is the version which updated on 2020/3/6)
 
 # Fix the Combojack Support
@@ -54,6 +54,9 @@ Added `IntelBluetoothFirmware` & `IntelBluetoothInjector` again.
 Fixed graphics glitch on external screen when using HDMI connection on 1080P model. (Thanks to @Arien for testing)
 ## 2020/3/25
 The macOS has been upgraded to `10.15.4`.
+## 2020/4/12
+* Upgraded `Opencore` to `0.5.8 (20200410)`.
+* Upgraded `WhateverGreen` to `1.3.8`, in order to fix black screen after sleep possibly occur on certain models.
 
 # Tested Hardware
 ## Can be driven
