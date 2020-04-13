@@ -1,6 +1,6 @@
 # Dell-Inspiron-7590-Hackintosh-Opencore
 OpenCore EFI for Dell Inspiron 759x.        
-✅ Current macOS version: `10.15.4` / Current EFI version: `20.3.9`      
+✅ Current macOS version: `10.15.4` / Current EFI version: `20.4.13`      
 In theory, this EFI supports for all models of Dell Inspiron 7590 / 7591 Series.
 ![](https://tva1.sinaimg.cn/large/0080xEK2ly1gday15hkgaj31hc0u04qp.jpg)
 
@@ -56,8 +56,9 @@ Fixed graphics glitch on external screen when using HDMI connection on 1080P mod
 The macOS has been upgraded to `10.15.4`.
 ## 2020/4/12
 * Upgraded `Opencore` to `0.5.8 (20200410)`.
-* Upgraded `WhateverGreen` to `1.3.8`, in order to fix black screen after sleep possibly occur on certain models.
-
+* Upgraded `WhateverGreen` to `1.3.8`, in order to fix black screen after sleep possibly occur on certain models. (Thanks to @kihsu for testing)
+## 2020/4/13
+Upgraded `Lilu` to `1.4.3`, which is compatible with `WhateverGreen` (`1.3.8`). (Thanks to @XHL669 & @ChasonJiang for testing)
 # Tested Hardware
 ## Can be driven
 **Dell Inspiron 7590** with Sharp SHP14C7 4K Display
