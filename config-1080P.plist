@@ -710,7 +710,7 @@
 				<data>AACbPg==</data>
 				<key>disable-external-gpu</key>
 				<data>AQAAAA==</data>
-				<key>enable-dpcd-max-link-rate-fix</key>
+				<key>enable-dpcd-max-link-rate</key>
 				<data>CgAAAA==</data>
 				<key>enable-dpcd-max-link-rate-fix</key>
 				<data>AQAAAA==</data>

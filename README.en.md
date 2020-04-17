@@ -1,8 +1,8 @@
 # Dell-Inspiron-7590-Hackintosh-Opencore
 OpenCore EFI for Dell Inspiron 759x.        
-✅ Current macOS version: `10.15.4` / Current EFI version: `20.4.13`      
+✅ Current macOS version: `10.15.5 Beta 2` `(19F62f)`  / Current EFI version: `20.4.13`      
 In theory, this EFI supports for all models of Dell Inspiron 7590 / 7591 Series.
-![](https://tva1.sinaimg.cn/large/0080xEK2ly1gday15hkgaj31hc0u04qp.jpg)
+![](https://tva1.sinaimg.cn/large/0080xEK2ly1gdwvs89slyj31hc0u01kx.jpg)
 
 # Introduction
 * The EFI for reference only in present. All hardware can normally work but wireless card have not been tested yet.
@@ -19,6 +19,13 @@ Thanks to @[hackintosh-stuff](https://github.com/hackintosh-stuff/ComboJack) and
 # Color Profiles for 4K Screen
 It will load the default sRGB color profile. For 4K model, it is an incorrect profile but you can apply other color profiles for your screen to improve the color experience.
 > Download: ([Sharp SHP14C7](http://oss.pm-z.tech/temp_files/SHP14C7_ICC.zip)) ([AUO AUO41EB](http://oss.pm-z.tech/temp_files/AUO41EB_ICC.zip))<br>Each package includes all 6 profiles which are extracted from Dell PremierColor. <br>Copy .icm files to `~/Library/ColorSync/Profiles` and apply the color profile you need in `System Preferences→Displays→Color`.<br>Using `Adobe RGB` or `DCI-P3` profile is recommended, due to the 4K screen covers 100% Adobe RGB and 90% DCI-P3.
+
+# Fn function may be changed
+`Fn Function` may be changed after upgrading to macOS `10.15.5`.
+For example, the hotkey to dim the display is `F6`, which will be changed to `Fn + F6` after upgrading the macOS to `10.15.5`. Meanwhile, pressing `F6` seperately it will work as an normal function key.
+This change will effect on other operating systems, including Windows.
+If you need to turn the function key mode to initial status, set it in BIOS: Go to `POST Behavior → Fn Lock Options`, then select `Lock Mode Enable/Secondary`.
+![](https://tva1.sinaimg.cn/large/0080xEK2ly1gdwvl59kiyj30rs0fq1kx.jpg)
 
 # Known Problems
 - [x] ~~HDMI can't output audio on 4K model.~~
@@ -59,6 +66,9 @@ The macOS has been upgraded to `10.15.4`.
 * Upgraded `WhateverGreen` to `1.3.8`, in order to fix black screen after sleep possibly occur on certain models. (Thanks to @kihsu for testing)
 ## 2020/4/13
 Upgraded `Lilu` to `1.4.3`, which is compatible with `WhateverGreen` (`1.3.8`). (Thanks to @XHL669 & @ChasonJiang for testing)
+## 2020/4/17
+The macOS has been upgraded to `10.15.5 Beta 2 (19F62f)`.
+
 # Tested Hardware
 ## Can be driven
 **Dell Inspiron 7590** with Sharp SHP14C7 4K Display

@@ -1,9 +1,9 @@
 # Dell-Inspiron-7590-Hackintosh-Opencore
 OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pinming/Dell-Inspiron-7590-Hackintosh-Opencore/blob/master/README.en.md)_       
-✅ 当前 macOS 版本 `10.15.4` / 当前 EFI 包版本 `20.4.13`       
+✅ 当前 macOS 版本 `10.15.5 Beta 2` `(19F62f)` / 当前 EFI 包版本 `20.4.13`       
 【理论上】本 EFI 支持 Dell Inspiron 7590 / 7591 全系列机型。       
 很惭愧，只对这款机器的黑苹果进程做了一点微小的工作！🐸
-![](https://tva1.sinaimg.cn/large/0080xEK2ly1gday15hkgaj31hc0u04qp.jpg)
+![](https://tva1.sinaimg.cn/large/0080xEK2ly1gdwvs89slyj31hc0u01kx.jpg)
 
 # 写在前面
 * 本 EFI 仅供参考，系统目前各个可以驱动的主要硬件运行基本正常，但 Broadcom 无线网卡尚未测试，相关完善将在近期进行。
@@ -22,6 +22,12 @@ OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pin
 # 4K 机型颜色配置文件
 系统初次进入默认加载 sRGB 颜色配置，对于 4K 机型，这会导致观感不佳。
 > 如有需要可以自行下载 4K 屏幕的校色文件：【[夏普 SHP14C7](http://oss.pm-z.tech/temp_files/SHP14C7_ICC.zip)】【[友达 AUO41EB](http://oss.pm-z.tech/temp_files/AUO41EB_ICC.zip)】<br>压缩包内已包含 Dell PremierColor 软件中的全部六种配置文件。<br>使用方法：解压压缩包后，将需要的 .icm 文件复制到：`~/Library/ColorSync/Profiles` 中，然后在 `系统偏好设置→显示器→颜色` 中选择相应的配置文件。<br>建议使用 `Adobe RGB` 或 `DCI-P3` 校色文件。这两款屏幕的色域覆盖为 100% Adobe RGB 和 90% DCI-P3。
+
+# 升级 10.15.5 后可能发生 Fn 键设置改变
+升级 macOS `10.15.5` 后，`Fn 键`的功能可能发生改变。例如：原先降低亮度的热键是 `F6`，升级后会变为 `Fn + F6`，而单击 `F6` 键本身将实现其 Function 键功能，这与默认设置相反。       
+这一变化同时会影响其他系统（包括 Windows）。       
+如果需要更改回原来的模式，请在 BIOS 中进行设置：`POST Behavior → Fn Lock Options` 中选择 `Lock Mode Enable/Secondary`。
+![](https://tva1.sinaimg.cn/large/0080xEK2ly1gdwvl59kiyj30rs0fq1kx.jpg)
 
 # 目前存在的 Bug
 - [x] ~~4K 机型下 HDMI 只能输出画面，不能输出声音~~
@@ -65,6 +71,8 @@ OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pin
 * 更新 `WhateverGreen` 至 `1.3.8` 版本，解决部分机型睡眠后黑屏问题（感谢 @kihsu 的提示）
 ## 2020/4/13
 更新 `Lilu` 至 `1.4.3` 版本，与  `WhateverGreen` (`1.3.8`) 配套，防止无法进入系统（感谢 @XHL669、@ChasonJiang 的测试）
+## 2020/4/17
+已无痛升级至 `10.15.5 Beta 2 (19F62f)`，各项功能正常
 
 # 测试机硬件配置
 ## 已驱动 / 已知可驱动
