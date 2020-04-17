@@ -715,30 +715,30 @@
 				<key>enable-dpcd-max-link-rate-fix</key>
 				<data>AQAAAA==</data>
 				<key>enable-hdmi-dividers-fix</key>
-				<data>AQAAAA==</data> 
+				<data>AQAAAA==</data>
 				<key>enable-hdmi20</key>
 				<data>AQAAAA==</data>
 				<key>enable-lspcon-support</key>
 				<data>AQAAAA==</data>
-				<key>framebuffer-con1-alldata</key> 
-				<data>AQUJAAAEAACHAQAA</data> 
+				<key>framebuffer-con1-alldata</key>
+				<data>AQUJAAAEAACHAQAA</data>
 				<key>framebuffer-con1-enable</key>
 				<data>AQAAAA==</data>
-				<key>framebuffer-con2-alldata</key> 
+				<key>framebuffer-con2-alldata</key>
 				<data>AgYJAAAEAACHAQAA</data>
 				<key>framebuffer-con2-enable</key>
 				<data>AQAAAA==</data>
-				<key>framebuffer-con3-alldata</key> 
-				<data>AwQKAAAIAACHAQAA</data> 
-				<key>framebuffer-con3-enable</key> 
-				<data>AQAAAA==</data> 
-				<key>framebuffer-con3-has-lspcon</key> 
-				<data>AQAAAA==</data> 
-				<key>framebuffer-patch-enable</key> 
-				<data>AQAAAA==</data> 
-				<key>framebuffer-portcount</key> 
-				<data>BAAAAA==</data> 
-				<key>framebuffer-unifiedmem</key> 
+				<key>framebuffer-con3-alldata</key>
+				<data>AwQKAAAIAACHAQAA</data>
+				<key>framebuffer-con3-enable</key>
+				<data>AQAAAA==</data>
+				<key>framebuffer-con3-has-lspcon</key>
+				<data>AQAAAA==</data>
+				<key>framebuffer-patch-enable</key>
+				<data>AQAAAA==</data>
+				<key>framebuffer-portcount</key>
+				<data>BAAAAA==</data>
+				<key>framebuffer-unifiedmem</key>
 				<data>AAAAgA==</data>
 				<key>hda-gfx</key>
 				<string>onboard-1</string>
@@ -1639,8 +1639,6 @@
 				<data>5wMAAA==</data>
 				<key>nvda_drv</key>
 				<data>MQ==</data>
-				<key>prev-lang:kbd</key>
-				<data>cnUtUlU6MjUy</data>
 			</dict>
 		</dict>
 		<key>Block</key>
