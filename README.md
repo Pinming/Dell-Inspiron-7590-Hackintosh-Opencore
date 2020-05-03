@@ -1,6 +1,6 @@
 # Dell-Inspiron-7590-Hackintosh-Opencore
 OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pinming/Dell-Inspiron-7590-Hackintosh-Opencore/blob/master/README.en.md)_       
-✅ 当前 macOS 版本 `10.15.5 Beta 2` `(19F62f)` / 当前 EFI 包版本 `20.4.13`       
+✅ 当前 macOS 版本 `10.15.5 Beta 2` `(19F62f)` / 当前 EFI 包版本 `20.5.3`       
 【理论上】本 EFI 支持 Dell Inspiron 7590 / 7591 全系列机型。       
 很惭愧，只对这款机器的黑苹果进程做了一点微小的工作！🐸
 ![](https://tva1.sinaimg.cn/large/0080xEK2ly1gdwvs89slyj31hc0u01kx.jpg)
@@ -73,6 +73,9 @@ OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pin
 更新 `Lilu` 至 `1.4.3` 版本，与  `WhateverGreen` (`1.3.8`) 配套，防止无法进入系统（感谢 @XHL669、@ChasonJiang 的测试）
 ## 2020/4/17
 已无痛升级至 `10.15.5 Beta 2 (19F62f)`，各项功能正常
+## 2020/5/3
+* 屏蔽 `SSDT-PLUG-_SB.PR00.aml`，确保 CPU 性能正常释放（PL1 = 45W / PL2 = 90W）
+* 更新 `WhateverGreen` 至 `1.3.9` 版本，增加 `igfxfw=2` 参数以使用 Apple GuC Firmware
 
 # 测试机硬件配置
 ## 已驱动 / 已知可驱动

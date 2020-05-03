@@ -1,6 +1,6 @@
 # Dell-Inspiron-7590-Hackintosh-Opencore
 OpenCore EFI for Dell Inspiron 759x.        
-✅ Current macOS version: `10.15.5 Beta 2` `(19F62f)`  / Current EFI version: `20.4.13`      
+✅ Current macOS version: `10.15.5 Beta 2` `(19F62f)`  / Current EFI version: `20.5.3`      
 In theory, this EFI supports for all models of Dell Inspiron 7590 / 7591 Series.
 ![](https://tva1.sinaimg.cn/large/0080xEK2ly1gdwvs89slyj31hc0u01kx.jpg)
 
@@ -68,6 +68,9 @@ The macOS has been upgraded to `10.15.4`.
 Upgraded `Lilu` to `1.4.3`, which is compatible with `WhateverGreen` (`1.3.8`). (Thanks to @XHL669 & @ChasonJiang for testing)
 ## 2020/4/17
 The macOS has been upgraded to `10.15.5 Beta 2 (19F62f)`.
+## 2020/5/3
+* Disabled `SSDT-PLUG-_SB.PR00.aml`, in order to make CPU's performance be normal.（PL1 = 45W / PL2 = 90W）
+* Upgraded `WhateverGreen` to `1.3.9`, added argument `igfxfw=2` to use Apple GuC Firmware.
 
 # Tested Hardware
 ## Can be driven
