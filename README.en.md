@@ -70,7 +70,7 @@ Upgraded `Lilu` to `1.4.3`, which is compatible with `WhateverGreen` (`1.3.8`). 
 The macOS has been upgraded to `10.15.5 Beta 2 (19F62f)`.
 ## 2020/5/3
 * Disabled `SSDT-PLUG-_SB.PR00.aml`, in order to make CPU's performance be normal.（PL1 = 45W / PL2 = 90W）
-* Upgraded `WhateverGreen` to `1.3.9`, added argument `igfxfw=2` to use Apple GuC Firmware.
+* Upgraded `WhateverGreen` to `1.3.9`, added argument `igfxfw=2` to use Apple GuC Firmware. (GuC = Graphics microController)
 
 # Tested Hardware
 ## Can be driven

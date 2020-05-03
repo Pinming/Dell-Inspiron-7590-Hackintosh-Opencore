@@ -75,7 +75,7 @@ OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pin
 已无痛升级至 `10.15.5 Beta 2 (19F62f)`，各项功能正常
 ## 2020/5/3
 * 屏蔽 `SSDT-PLUG-_SB.PR00.aml`，确保 CPU 性能正常释放（PL1 = 45W / PL2 = 90W）
-* 更新 `WhateverGreen` 至 `1.3.9` 版本，增加 `igfxfw=2` 参数以使用 Apple GuC Firmware
+* 更新 `WhateverGreen` 至 `1.3.9` 版本，增加 `igfxfw=2` 参数以使用 Apple GuC Firmware (GuC = Graphics microController)，增强集显性能
 
 # 测试机硬件配置
 ## 已驱动 / 已知可驱动
