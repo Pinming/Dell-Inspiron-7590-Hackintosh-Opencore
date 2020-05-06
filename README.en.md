@@ -1,6 +1,6 @@
 # Dell-Inspiron-7590-Hackintosh-Opencore
 OpenCore EFI for Dell Inspiron 759x.        
-✅ Current macOS version: `10.15.5 Beta 2` `(19F62f)`  / Current EFI version: `20.5.3`      
+✅ Current macOS version: `10.15.5 Beta 2` `(19F62f)`  / Current EFI version: `20.5.6`      
 In theory, this EFI supports for all models of Dell Inspiron 7590 / 7591 Series.
 ![](https://tva1.sinaimg.cn/large/0080xEK2ly1gdwvs89slyj31hc0u01kx.jpg)
 
@@ -31,9 +31,9 @@ If you need to turn the function key mode to initial status, set it in BIOS: Go 
 - [x] ~~HDMI can't output audio on 4K model.~~
 - [x] ~~Audio Card sometimes not working if mac installed in fast NVME drive, due to the loading order of `AppleALC` & `AppleHDAController`.~~
 - [x] ~~A short time sleep with lid-closing will lead to kernel panic.~~
-- [x] ~~It won't response automatically when HDMI cable plug out. You have to set it to normal display status manually.~~
-    > ~~Temporary Solution: After plug out HDMI cable, hold  `Option` button (`Windows` Button on Hackintosh) on `System Preferences→Displays`, and click button `Detect Displays` to re-detect the monitors.~~
-- [ ] HDMI can't output audio on 1080P model.
+- [ ] It won't response automatically when HDMI cable plug out. You have to set it to normal display status manually.
+    > Temporary Solution: After plug out HDMI cable, hold  `Option` button (`Windows` Button on Hackintosh) on `System Preferences→Displays`, and click button `Detect Displays` to re-detect the monitors.
+- [ ] HDMI possibly can not output audio on 1080P model.
 - [ ] Wireless Card & ThunderBolt have not been tested yet and can't confirm whether they are available.
 - [ ] Internal Microphone doesn't work.
 - [ ] It can't read proper battery capacity (Should be 97 Wh instead of 85Wh). But the percentage of remaining battery is correct.
@@ -69,9 +69,11 @@ Upgraded `Lilu` to `1.4.3`, which is compatible with `WhateverGreen` (`1.3.8`). 
 ## 2020/4/17
 The macOS has been upgraded to `10.15.5 Beta 2 (19F62f)`.
 ## 2020/5/3
-* Disabled `SSDT-PLUG-_SB.PR00.aml`, in order to make CPU's performance be normal.（PL1 = 45W / PL2 = 90W）
-* Upgraded `WhateverGreen` to `1.3.9`, added argument `igfxfw=2` to use Apple GuC Firmware. (GuC = Graphics microController)
-
+* Disabled `SSDT-PLUG-_SB.PR00.aml` to make CPU have a better performance (PL1 = 45W / PL2 = 90W)
+* ~~Updated `WhateverGreen` to `1.3.9`, added boot argument `igfxfw=2` to use Apple GuC Firmware.~~
+    > This version of WhateverGreen will lead to a kernel panic after HDMI plugging in. It has been rolled back to `1.3.8`.
+## 2020/5/6
+Temporarily rolled back `WhateverGreen` to `1.3.8` to fix the kernel panic after HDMI plugging in.
 # Tested Hardware
 ## Can be driven
 **Dell Inspiron 7590** with Sharp SHP14C7 4K Display

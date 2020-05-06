@@ -1,6 +1,6 @@
 # Dell-Inspiron-7590-Hackintosh-Opencore
 OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pinming/Dell-Inspiron-7590-Hackintosh-Opencore/blob/master/README.en.md)_       
-✅ 当前 macOS 版本 `10.15.5 Beta 2` `(19F62f)` / 当前 EFI 包版本 `20.5.3`       
+✅ 当前 macOS 版本 `10.15.5 Beta 2` `(19F62f)` / 当前 EFI 包版本 `20.5.6`       
 【理论上】本 EFI 支持 Dell Inspiron 7590 / 7591 全系列机型。       
 很惭愧，只对这款机器的黑苹果进程做了一点微小的工作！🐸
 ![](https://tva1.sinaimg.cn/large/0080xEK2ly1gdwvs89slyj31hc0u01kx.jpg)
@@ -33,9 +33,9 @@ OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pin
 - [x] ~~4K 机型下 HDMI 只能输出画面，不能输出声音~~
 - [x] ~~偶有出现声卡掉驱动现象，推测是 `AppleALC` 与 `AppleHDAController` 间的加载顺序问题，一时可能无法解决~~
 - [x] ~~短时间的合盖睡眠可能导致系统崩溃~~
-- [x] ~~在 HDMI 热插拔后，电脑不能正常退出投影模式（即没有识别出 HDMI 已拔出）~~
-    > ~~临时解决办法：拔除 HDMI 线后，在 `系统偏好设置→显示器`界面下按住`Option`（即`Win`键），点击右下角「侦测显示器」重新侦测接入状况即可。~~
-- [ ] 1080P 机型下 HDMI 只能输出画面，不能输出声音
+- [ ] 在 HDMI 热插拔后，电脑不能正常退出投影模式（即没有识别出 HDMI 已拔出）
+    > 临时解决办法：拔除 HDMI 线后，在 `系统偏好设置→显示器`界面下按住`Option`（即`Win`键），点击右下角「侦测显示器」重新侦测接入状况即可。
+- [ ] 1080P 机型下 HDMI 可能只输出画面，不输出声音
 - [ ] 无线网卡 / 雷电接口尚未测试，不确定功能可用性
 - [ ] 内置麦克风无法使用【目前无解】
 - [ ] 电池的容量 (Capacity) 识别错误，应为 97Wh，但实时电量显示基本准确
@@ -75,7 +75,10 @@ OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pin
 已无痛升级至 `10.15.5 Beta 2 (19F62f)`，各项功能正常
 ## 2020/5/3
 * 屏蔽 `SSDT-PLUG-_SB.PR00.aml`，确保 CPU 性能正常释放（PL1 = 45W / PL2 = 90W）
-* 更新 `WhateverGreen` 至 `1.3.9` 版本，增加 `igfxfw=2` 参数以使用 Apple GuC Firmware (GuC = Graphics microController)，增强集显性能
+* ~~更新 `WhateverGreen` 至 `1.3.9` 版本，增加 `igfxfw=2` 参数以使用 Apple GuC Firmware (GuC = Graphics microController)，增强集显性能~~
+    > 该更新会导致插入 HDMI 时 Kernel Panic，已回退该项更新。
+## 2020/5/6
+暂时回退 `WhateverGreen` 至 `1.3.8`，解决 HDMI 死机问题。
 
 # 测试机硬件配置
 ## 已驱动 / 已知可驱动
