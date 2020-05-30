@@ -1,6 +1,6 @@
 # Dell-Inspiron-7590-Hackintosh-Opencore
 OpenCore EFI for Dell Inspiron 759x.        
-✅ Current macOS version: `10.15.5` / Current EFI version: `20.5.28`      
+✅ Current macOS version: `10.15.5` / Current EFI version: `20.5.30`      
 In theory, this EFI supports for all models of Dell Inspiron 7590 / 7591 Series.
 ![](https://tva1.sinaimg.cn/large/0080xEK2ly1gf8bxfyo2rj31hc0u0u0y.jpg)
 
@@ -8,7 +8,7 @@ In theory, this EFI supports for all models of Dell Inspiron 7590 / 7591 Series.
 * The EFI for reference only in present. All hardware can normally work but wireless card have not been tested yet.
 * The EFI is based on @[tctien342](https://github.com/tctien342/Dell-Inspiron-7591-Hackintosh)'s repo. Thanks!
 * `config.plist` is designed for 4K model and `config-1080P.plist` for 1080P model. For users of 1080P model, please rename `config-1080P.plist` to `config.plist` first.
-* [⚠️ **IMPORTANT**] **Default strategy for Bluetooth & WIFI**: <br> The default settings are loading `IntelBluetoothFirmware` and put each kexts for Broadcom Wireless Card into `\OC\Kexts` folder but **disabled** it in `config.plist`. <br>If you have replaced a Broadcom one, goto `config.plist -> Kernel -> Add` to enable them and disable `NullEthernet.kext`. In addition, goto `config.plist -> ACPI` to disable `SSDT-RMNE`. 
+* [⚠️ **IMPORTANT**] **Default strategy for Bluetooth & WIFI**: <br> The default settings are designed for Broadcom DW1820A (`BCM94356ZEPA50DX_2` is highly recommended). If you need to make Intel bluetooth work, please enable those relative kexts in config.plist manually.
 * Version number is same as the date of each commit. (e.g. `20.3.6` is the version which updated on 2020/3/6)
 
 # Fix the Combojack Support
@@ -36,6 +36,7 @@ If you need to turn the function key mode to initial status, set it in BIOS: Go 
 - [ ] Wireless Card & ThunderBolt have not been tested yet and can't confirm whether they are available.
 - [ ] Internal Microphone doesn't work.
 - [ ] It can't read proper battery capacity (Should be 97 Wh instead of 85Wh). But the percentage of remaining battery is correct.
+- [ ] DW1820A can not receive files from other devices.
     
 # What's New
 ## 2020/2/16
@@ -77,6 +78,8 @@ Temporarily rolled back `WhateverGreen` to `1.3.8` to fix the kernel panic after
 ## 2020/5/28
 * The macOS has been upgraded to `10.15.5 GM (19F96)`.
 * Updated `WhateverGreen` to `1.4.0`, added boot argument `igfxfw=2` to use Apple GuC Firmware.
+## 2020/5/30
+Made it compatible with DW1820A and stopped the support for Intel bluetooth.
 # Tested Hardware
 ## Can be driven
 **Dell Inspiron 7590** with Sharp SHP14C7 4K Display
@@ -87,7 +90,7 @@ Temporarily rolled back `WhateverGreen` to `1.3.8` to fix the kernel panic after
 * SSD: WD PC SN520 NVMe WDC 512GB SSD
 * Audio: Realtek ALC295 (ALC3254) (Internal Mic couldn't be driven) (Layout-ID = 77, if you choose 28 may lead to high CPU utilization by kernel_task）
 * Micro SD Card Reader: Goodix fingerpint reader (Couldn't be recognized on system report, but could work properly)
-* 【Plan to test】_WLAN + Bluetooth: Broadcom DW1820A_
+* WLAN + Bluetooth: Broadcom DW1820A (`BCM94356ZEPA50DX_2`)
 
 ## Can not be driven
 * Nvidia Geforce GTX 1650

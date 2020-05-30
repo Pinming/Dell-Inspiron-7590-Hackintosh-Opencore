@@ -1,6 +1,6 @@
 # Dell-Inspiron-7590-Hackintosh-Opencore
 OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pinming/Dell-Inspiron-7590-Hackintosh-Opencore/blob/master/README.en.md)_       
-✅ 当前 macOS 版本 `10.15.5` `(19F96)` / 当前 EFI 包版本 `20.5.28`       
+✅ 当前 macOS 版本 `10.15.5` `(19F96)` / 当前 EFI 包版本 `20.5.30`       
 【理论上】本 EFI 支持 Dell Inspiron 7590 / 7591 全系列机型。       
 很惭愧，只对这款机器的黑苹果进程做了一点微小的工作！🐸
 ![](https://tva1.sinaimg.cn/large/0080xEK2ly1gf8bxfyo2rj31hc0u0u0y.jpg)
@@ -11,11 +11,8 @@ OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pin
 * 本 EFI 仅供参考，系统目前各个可以驱动的主要硬件运行基本正常，但 Broadcom 无线网卡尚未测试，相关完善将在近期进行。
 * 本 EFI 在 @[tctien342](https://github.com/tctien342/Dell-Inspiron-7591-Hackintosh) 的 repo 基础上修改并优化，感谢！
 * `config.plist` 供 4K 机型使用； `config-1080P.plist` 供 1080P 机型使用。<br>1080P 机型使用前请将对应 config 重命名为 `config.plist`。
-* 【⚠️ **重要**】**本 `config` 对于无线网卡及蓝牙的默认操作**：<br>默认加载 `IntelBluetoothFirmware`；默认将 Broadcom 无线网卡的各项驱动安置在 `\OC\kexts` 文件夹中但**不启用**。<br>如果已经更换了 Broadcom 无线网卡，请自行将 `Kernel -> Add` 中网卡相关 kexts 的 `Enabled` 项启用，并删除 `boot-args` 中相应启动参数的 `#` 号。此外，还需在 kext 设置中屏蔽 `NullEthernet.kext` 并在 SSDT 设置中屏蔽 `SSDT-RMNE`。
+* 【⚠️ **重要**】自 `20.5.30` 版起，默认直接支持 `DW1820A` 网卡（推荐使用：`BCM94356ZEPA50DX_2`，无需屏蔽j针脚，可直接驱动）。<br>英特尔蓝牙功能将默认关闭，如需使用请在 config.plist 中自行开启 `IntelBluetooth***.kext`。
 * 版本号即为更新日期。如 2020/2/18 版本的版本号则为`20.2.18`。
-
-> 【另外】本人即将返校，终于可以摸到在学校的 DW1820A 了。我手头的版本是 `BCM94350ZAE_2`，测试完毕后（预计 6 月初）会进行更新并向大家反馈使用情况。据 #23 同学的测试说效果还可以。
-
 
 # 声卡接口修复
 在 `ComboJack` 文件夹中打开 `install.sh` 安装声卡接口守护进程，使得机器可以识别耳机接口的插拔。        
@@ -41,9 +38,10 @@ OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pin
     > 临时解决办法：接入 / 拔除 HDMI 线后，在 `系统偏好设置→显示器`界面下按住`Option`（即`Win`键），点击右下角「侦测显示器」重新侦测接入状况即可。
 - [ ] 1080P 机型下 HDMI 可能只输出画面，不输出声音
     > 如果愿意尝试，也可以套用 4K 版的 config 使其输出声音，当然并不保证能够成功。~~「搏一搏，单车变摩托」~~
-- [ ] 无线网卡 / 雷电接口尚未测试，不确定功能可用性
+- [ ] 雷电接口尚未测试，不确定功能可用性
 - [ ] 内置麦克风无法使用【目前无解】
 - [ ] 电池的容量 (Capacity) 识别错误，应为 97Wh，但实时电量显示基本准确
+- [ ] DW1820A 蓝牙暂时无法从接收其他设备的文件。
 
 # 更新日志
 ## 2020/2/16
@@ -88,6 +86,8 @@ OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pin
 ## 2020/5/28
 * 已无痛升级至 `10.15.5 GM (19F96)`，各项功能正常
 * 更新 `WhateverGreen` 至 `1.4.0` 版本，增加 `igfxfw=2` 参数以使用 Apple GuC Firmware (GuC = Graphics microController)，增强集显性能
+## 2020/5/30
+增加对 DW1820A 的支持，停止对英特尔蓝牙的默认支持。
 
 # 测试机硬件配置
 ## 已驱动 / 已知可驱动
@@ -99,7 +99,7 @@ OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pin
 * SSD：WD PC SN520 NVMe WDC 512GB SSD
 * Audio：Realtek ALC295（戴尔定制型号：ALC3254）（内置麦克风不能驱动）（Layout-ID = 77，选用 28 可能导致 kernel_task 占用过高而导致 CPU 高频不下）
 * Micro SD Card Reader：Realtek Memory Card Reader（系统属性「读卡器」一栏无法识别，但可以正常使用）
-* 【计划 / 即将更换】_WLAN + Bluetooth：Broadcom DW1820A_
+* WLAN + Bluetooth：Broadcom DW1820A (`BCM94356ZEPA50DX_2`)
 
 ## 已知不可驱动
 * Nvidia Geforce GTX 1650（无解）
