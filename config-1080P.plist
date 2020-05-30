@@ -156,7 +156,7 @@
 				<key>Comment</key>
 				<string>Fake ethernet card, work with NullEthernet, please disabled it if you have compatible wifi card</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Path</key>
 				<string>SSDT-RMNE.aml</string>
 			</dict>
@@ -530,19 +530,6 @@
 	<dict>
 		<key>Add</key>
 		<dict>
-			<key>#PciRoot(0x0)/Pci(0x1d,0x6)/Pci(0x0,0x0)</key>
-			<dict>
-				<key>AAPL,slot-name</key>
-				<string>WLAN</string>
-				<key>compatible</key>
-				<string>pci14e4,43a0</string>
-				<key>device_type</key>
-				<string>Airport Extreme</string>
-				<key>model</key>
-				<string>DW1820A (BCM4350) 802.11ac Wireless</string>
-				<key>name</key>
-				<string>Airport</string>
-			</dict>
 			<key>PciRoot(0x0)/Pci(0x0,0x0)</key>
 			<dict>
 				<key>AAPL,slot-name</key>
@@ -708,10 +695,10 @@
 			<dict>
 				<key>AAPL,ig-platform-id</key>
 				<data>AACbPg==</data>
-				<key>dpcd-max-link-rate</key>
-				<data>CgAAAA==</data>
 				<key>disable-external-gpu</key>
 				<data>AQAAAA==</data>
+				<key>dpcd-max-link-rate</key>
+				<data>CgAAAA==</data>
 				<key>enable-dpcd-max-link-rate-fix</key>
 				<data>AQAAAA==</data>
 				<key>enable-hdmi-dividers-fix</key>
@@ -846,7 +833,7 @@
 				<key>Comment</key>
 				<string>Fix En0 For imess and Facetime, please disabled it if you have compatible wifi card</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/NullEthernet</string>
 				<key>MaxKernel</key>
@@ -862,7 +849,7 @@
 				<key>Comment</key>
 				<string>Wifi card fix</string>
 				<key>Enabled</key>
-				<false/>
+				<true/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/AirportBrcmFixup</string>
 				<key>MaxKernel</key>
@@ -878,7 +865,7 @@
 				<key>Comment</key>
 				<string>Bluetooth card fix</string>
 				<key>Enabled</key>
-				<false/>
+				<true/>
 				<key>ExecutablePath</key>
 				<string></string>
 				<key>MaxKernel</key>
@@ -894,7 +881,7 @@
 				<key>Comment</key>
 				<string>Bluetooth card fix</string>
 				<key>Enabled</key>
-				<false/>
+				<true/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/BrcmFirmwareData</string>
 				<key>MaxKernel</key>
@@ -910,7 +897,7 @@
 				<key>Comment</key>
 				<string>Bluetooth card fix</string>
 				<key>Enabled</key>
-				<false/>
+				<true/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/BrcmPatchRAM3</string>
 				<key>MaxKernel</key>
@@ -926,7 +913,7 @@
 				<key>Comment</key>
 				<string>Intel bluetooth card fix, please disabled it if you have compatible wifi card</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/IntelBluetoothFirmware</string>
 				<key>MaxKernel</key>
@@ -942,7 +929,7 @@
 				<key>Comment</key>
 				<string>Intel bluetooth card fix, please disabled it if you have compatible wifi card</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>ExecutablePath</key>
 				<string></string>
 				<key>MaxKernel</key>
@@ -958,7 +945,7 @@
 				<key>Comment</key>
 				<string>Bluetooth card fix</string>
 				<key>Enabled</key>
-				<false/>
+				<true/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/BT4LEContinuityFixup</string>
 				<key>MaxKernel</key>
@@ -1634,7 +1621,7 @@
 			<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
 			<dict>
 				<key>boot-args</key>
-				<string>debug=0x100 npci=0x2000 darkwake=1  #brcmfx-driver=2 #brcmfx-country=#a alcid=77 keepsyms=1 agdpmod=vit9696 igfxfw=2 -btnforceclick</string>
+				<string>debug=0x100 npci=0x2000 darkwake=1 brcmfx-driver=2 brcmfx-country=#a alcid=77 keepsyms=1 agdpmod=vit9696 igfxfw=2 -btnforceclick</string>
 				<key>nvda_drv</key>
 				<data>MQ==</data>
 			</dict>
