@@ -1,9 +1,9 @@
 # Dell-Inspiron-7590-Hackintosh-Opencore
 OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pinming/Dell-Inspiron-7590-Hackintosh-Opencore/blob/master/README.en.md)_       
-✅ 当前 macOS 版本 `10.15.5` `(19F96)` / 当前 EFI 包版本 `20.5.30`       
+✅ 当前 macOS 版本 `10.15.6 Beta 1` `(19G36e)` / 当前 EFI 包版本 `20.5.30`       
 【理论上】本 EFI 支持 Dell Inspiron 7590 / 7591 全系列机型。       
 很惭愧，只对这款机器的黑苹果进程做了一点微小的工作！🐸
-![](https://tva1.sinaimg.cn/large/0080xEK2ly1gf8bxfyo2rj31hc0u0u0y.jpg)
+![](https://tva1.sinaimg.cn/large/0080xEK2ly1gfefwkavacj31hc0u01kx.jpg)
 
 # 写在前面
 > 希望无论是老鸟或新手都请认真阅读本部分，为自己的安装和使用减少不必要的麻烦！
@@ -12,6 +12,8 @@ OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pin
 * 本 EFI 在 @[tctien342](https://github.com/tctien342/Dell-Inspiron-7591-Hackintosh) 的 repo 基础上修改并优化，感谢！
 * `config.plist` 供 4K 机型使用； `config-1080P.plist` 供 1080P 机型使用。<br>1080P 机型使用前请将对应 config 重命名为 `config.plist`。
 * 【⚠️ **重要**】自 `20.5.30` 版起，默认直接支持 `DW1820A` 网卡（推荐使用：`BCM94356ZEPA50DX_2`，无需屏蔽针脚，可直接驱动）。<br>英特尔蓝牙功能将默认关闭，如需使用请在 config.plist 中自行开启 `IntelBluetooth***.kext`。
+> Intel 网卡用户如想使用蓝牙，可以直接进入 `IntelBT` 分支。
+
 * 版本号即为更新日期。如 2020/2/18 版本的版本号则为`20.2.18`。
 
 # 声卡接口修复
@@ -88,6 +90,8 @@ OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pin
 * 更新 `WhateverGreen` 至 `1.4.0` 版本，增加 `igfxfw=2` 参数以使用 Apple GuC Firmware (GuC = Graphics microController)，增强集显性能
 ## 2020/5/30
 增加对 DW1820A 的支持，停止对英特尔蓝牙的默认支持。
+## 2020/6/3
+* 已无痛升级至 `10.15.6 Beta 1(19G36e)`，各项功能正常
 
 # 测试机硬件配置
 ## 已驱动 / 已知可驱动

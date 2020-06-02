@@ -1,14 +1,16 @@
 # Dell-Inspiron-7590-Hackintosh-Opencore
 OpenCore EFI for Dell Inspiron 759x.        
-✅ Current macOS version: `10.15.5` / Current EFI version: `20.5.30`      
+✅ Current macOS version: `10.15.6 Beta 1` `(19G36e)` / Current EFI version: `20.5.30`      
 In theory, this EFI supports for all models of Dell Inspiron 7590 / 7591 Series.
-![](https://tva1.sinaimg.cn/large/0080xEK2ly1gf8bxfyo2rj31hc0u0u0y.jpg)
+![](https://tva1.sinaimg.cn/large/0080xEK2ly1gfefwkavacj31hc0u01kx.jpg)
 
 # Introduction
 * The EFI for reference only in present. All hardware can normally work but wireless card have not been tested yet.
 * The EFI is based on @[tctien342](https://github.com/tctien342/Dell-Inspiron-7591-Hackintosh)'s repo. Thanks!
 * `config.plist` is designed for 4K model and `config-1080P.plist` for 1080P model. For users of 1080P model, please rename `config-1080P.plist` to `config.plist` first.
 * [⚠️ **IMPORTANT**] **Default strategy for Bluetooth & WIFI**: <br> The default settings are designed for Broadcom DW1820A (`BCM94356ZEPA50DX_2` is highly recommended). If you need to make Intel bluetooth work, please enable those relative kexts in config.plist manually.
+> For users who use Intel Bluetooth, please go to the branch `IntelBT`.
+
 * Version number is same as the date of each commit. (e.g. `20.3.6` is the version which updated on 2020/3/6)
 
 # Fix the Combojack Support
@@ -80,6 +82,9 @@ Temporarily rolled back `WhateverGreen` to `1.3.8` to fix the kernel panic after
 * Updated `WhateverGreen` to `1.4.0`, added boot argument `igfxfw=2` to use Apple GuC Firmware.
 ## 2020/5/30
 Made it compatible with DW1820A and stopped the support for Intel bluetooth.
+## 2020/6/3
+The macOS has been upgraded to `10.15.6 Beta (19G36e)`.
+
 # Tested Hardware
 ## Can be driven
 **Dell Inspiron 7590** with Sharp SHP14C7 4K Display
