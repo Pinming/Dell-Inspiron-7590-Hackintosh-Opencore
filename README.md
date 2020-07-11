@@ -5,6 +5,7 @@ OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pin
 很惭愧，只对这款机器的黑苹果进程做了一点微小的工作！🐸
 ![](https://tva1.sinaimg.cn/large/0080xEK2ly1gfefwkavacj31hc0u01kx.jpg)
 
+_【Big Sur Test 测试分支已发布，欢迎尝鲜！】_
 # 写在前面
 > 希望无论是老鸟或新手都请认真阅读本部分，为自己的安装和使用减少不必要的麻烦！
 
