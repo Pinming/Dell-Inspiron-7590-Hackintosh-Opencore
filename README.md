@@ -1,11 +1,13 @@
 # Dell-Inspiron-7590-Hackintosh-Opencore
 OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pinming/Dell-Inspiron-7590-Hackintosh-Opencore/blob/master/README.en.md)_       
+【Big Sur Test 测试分支已发布，欢迎尝鲜！】
+
 ✅ 当前 macOS 版本 `10.15.6 Beta 1` `(19G36e)` / 当前 EFI 包版本 `20.5.30`       
 【理论上】本 EFI 支持 Dell Inspiron 7590 / 7591 全系列机型。       
 很惭愧，只对这款机器的黑苹果进程做了一点微小的工作！🐸
 ![](https://tva1.sinaimg.cn/large/0080xEK2ly1gfefwkavacj31hc0u01kx.jpg)
 
-_【Big Sur Test 测试分支已发布，欢迎尝鲜！】_
+
 # 写在前面
 > 希望无论是老鸟或新手都请认真阅读本部分，为自己的安装和使用减少不必要的麻烦！
 
