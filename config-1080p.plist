@@ -742,9 +742,9 @@
 				<string>Internal@0,31,3</string>
 				<key>alc-delay</key>
 				<integer>500</integer>
-				<key>alc-device-id</key>
+				<key>#alc-device-id</key>
 				<data>cJ0AAA==</data>
-				<key>alc-vendor-id</key>
+				<key>#alc-vendor-id</key>
 				<data>hoAAAA==</data>
 				<key>device_type</key>
 				<string>Multimedia audio controller</string>
@@ -1638,7 +1638,7 @@
 				<key>SystemAudioVolume</key>
 				<data>Rg==</data>
 				<key>boot-args</key>
-				<string>-v debug=0x100 npci=0x2000 darkwake=1 brcmfx-country=#a -brcmfxbeta keepsyms=1 agdpmod=vit9696 igfxfw=2</string>
+				<string>-v debug=0x100 npci=0x2000 darkwake=1 brcmfx-country=#a -brcmfxbeta keepsyms=1 agdpmod=vit9696 igfxfw=2 alcid=77</string>
 				<key>run-efi-updater</key>
 				<string>No</string>
 				<key>csr-active-config</key>
