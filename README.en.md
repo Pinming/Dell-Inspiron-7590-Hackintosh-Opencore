@@ -1,6 +1,6 @@
 # Dell-Inspiron-7590-Hackintosh-Opencore
 OpenCore EFI for Dell Inspiron 759x.        
-✅ Current macOS version: `10.15.6 Beta 1` `(19G36e)` / Current EFI version: `20.5.30`      
+✅ Current macOS version: `10.15.6 Beta 1` `(19G36e)` / Current EFI version: `20.7.16`      
 In theory, this EFI supports for all models of Dell Inspiron 7590 / 7591 Series.
 ![](https://tva1.sinaimg.cn/large/0080xEK2ly1gfefwkavacj31hc0u01kx.jpg)
 
@@ -21,23 +21,16 @@ Thanks to @[hackintosh-stuff](https://github.com/hackintosh-stuff/ComboJack) and
 It will load the default sRGB color profile. For 4K model, it is an incorrect profile but you can apply other color profiles for your screen to improve the color experience.
 > Download: ([Sharp SHP14C7](http://oss.pm-z.tech/temp_files/SHP14C7_ICC.zip)) ([AUO AUO41EB](http://oss.pm-z.tech/temp_files/AUO41EB_ICC.zip))<br>Each package includes all 6 profiles which are extracted from Dell PremierColor. <br>Copy .icm files to `~/Library/ColorSync/Profiles` and apply the color profile you need in `System Preferences→Displays→Color`.<br>Using `Adobe RGB` or `DCI-P3` profile is recommended, due to the 4K screen covers 100% Adobe RGB and 90% DCI-P3.
 
-# Fn function may be changed
-`Fn Function` may be changed after upgrading to macOS `10.15.5`.
-For example, the hotkey to dim the display is `F6`, which will be changed to `Fn + F6` after upgrading the macOS to `10.15.5`. Meanwhile, pressing `F6` seperately it will work as an normal function key.
-This change will effect on other operating systems, including Windows.
-If you need to turn the function key mode to initial status, set it in BIOS: Go to `POST Behavior → Fn Lock Options`, then select `Lock Mode Enable/Secondary`.
-![](https://tva1.sinaimg.cn/large/0080xEK2ly1gdwvl59kiyj30rs0fq1kx.jpg)
-
 # Known Problems
 - [x] ~~HDMI can't output audio on 4K model.~~
 - [x] ~~Audio Card sometimes not working if mac installed in fast NVME drive, due to the loading order of `AppleALC` & `AppleHDAController`.~~
 - [x] ~~A short time sleep with lid-closing will lead to kernel panic.~~
 - [ ] It won't response automatically after HDMI cable plug in or plug out. You possibly need to refresh the display status manually.
     > Temporary Solution: After plugging in or plugging out HDMI cable, hold  `Option` button (`Windows` Button on Hackintosh) on `System Preferences→Displays`, and click button `Detect Displays` to re-detect the monitors.
-- [ ] HDMI possibly can not output audio on 1080P model.
+- [ ] Monitor maybe blink while HDMI plugged in with audio output on 1080P model.
+    > You can solve it by turn it to sleep and wake up afterwhile.<br>For 1080P model, HDMI audio output is controlled by `alc-device-id` and `alc-vendor-id` in `DeviceProperties`->`PciRoot(0x0)/Pci(0x1f,0x3)`. If these 2 arguments are not assigned, HDMI audio won't be outputted.<br>According to some feedbacks about this problem, these arguments will be defaultly disabled after `20.7.16` and you can enable it by yourself if you are in need.
 - [ ] Wireless Card & ThunderBolt have not been tested yet and can't confirm whether they are available.
 - [ ] Internal Microphone doesn't work.
-- [ ] It can't read proper battery capacity (Should be 97 Wh instead of 85Wh). But the percentage of remaining battery is correct.
 - [ ] DW1820A can not receive files from other devices.
     
 # What's New
@@ -84,6 +77,9 @@ Temporarily rolled back `WhateverGreen` to `1.3.8` to fix the kernel panic after
 Made it compatible with DW1820A and stopped the support for Intel bluetooth.
 ## 2020/6/3
 The macOS has been upgraded to `10.15.6 Beta (19G36e)`.
+## 2020/7/16
+* Disabled HDMI audio output for 1080P model's default setting.
+* Added `DellSMCSensors` to control speed of fans.
 
 # Tested Hardware
 ## Can be driven
@@ -92,7 +88,7 @@ The macOS has been upgraded to `10.15.6 Beta (19G36e)`.
 * IGPU: Intel Graphics UHD 630
 * RAM: Hynix DDR4 2666Mhz / 16 GB * 2 = 32 GB RAM
 * Display: Sharp SHP14C7 @ 15.6' / 4K
-* SSD: WD PC SN520 NVMe WDC 512GB SSD
+* SSD: WD PC SN730 NVMe WDC 512GB SSD
 * Audio: Realtek ALC295 (ALC3254) (Internal Mic couldn't be driven) (Layout-ID = 77, if you choose 28 may lead to high CPU utilization by kernel_task）
 * Micro SD Card Reader: Goodix fingerpint reader (Couldn't be recognized on system report, but could work properly)
 * WLAN + Bluetooth: Broadcom DW1820A (`BCM94356ZEPA50DX_2`)

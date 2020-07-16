@@ -2,7 +2,7 @@
 OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pinming/Dell-Inspiron-7590-Hackintosh-Opencore/blob/master/README.en.md)_       
 【Big Sur Test 测试分支已发布，欢迎尝鲜！】
 
-✅ 当前 macOS 版本 `10.15.6 Beta 1` `(19G36e)` / 当前 EFI 包版本 `20.5.30`       
+✅ 当前 macOS 版本 `10.15.6 Beta 1` `(19G36e)` / 当前 EFI 包版本 `20.7.16`       
 【理论上】本 EFI 支持 Dell Inspiron 7590 / 7591 全系列机型。       
 很惭愧，只对这款机器的黑苹果进程做了一点微小的工作！🐸
 ![](https://tva1.sinaimg.cn/large/0080xEK2ly1gfefwkavacj31hc0u01kx.jpg)
@@ -16,24 +16,16 @@ OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pin
 * `config.plist` 供 4K 机型使用； `config-1080P.plist` 供 1080P 机型使用。<br>1080P 机型使用前请将对应 config 重命名为 `config.plist`。
 * 【⚠️ **重要**】自 `20.5.30` 版起，默认直接支持 `DW1820A` 网卡（推荐使用：`BCM94356ZEPA50DX_2`，无需屏蔽针脚，可直接驱动）。<br>英特尔蓝牙功能将默认关闭，如需使用请在 config.plist 中自行开启 `IntelBluetooth***.kext`。
 > Intel 网卡用户如想使用蓝牙，可以直接进入 `IntelBT` 分支。
-
+* 4K 及 1080P 机型都存在一定的个体差异，请仔细阅读「目前存在的 Bug」这一部分。
 * 版本号即为更新日期。如 2020/2/18 版本的版本号则为`20.2.18`。
 
 # 声卡接口修复
-在 `ComboJack` 文件夹中打开 `install.sh` 安装声卡接口守护进程，使得机器可以识别耳机接口的插拔。        
-在最新版的 `ComboJack` 中（2020/2/18 之后），插入耳机将自动识别，不再出现弹窗。
-感谢 @[tctien342](https://github.com/tctien342) 的贡献！
-![](http://tva1.sinaimg.cn/large/0080xEK2ly1gbzgvhggtbj30tk0ewahj.jpg)
+在 `ComboJack` 文件夹中打开 `install.sh` 安装声卡接口守护进程，使得机器可以自动识别耳机接口的插拔。
+感谢 @[hackintosh-stuff](https://github.com/hackintosh-stuff/ComboJack) 和 @[tctien342](https://github.com/tctien342) 的贡献！
 
 # 4K 机型颜色配置文件
 系统初次进入默认加载 sRGB 颜色配置，对于 4K 机型，这会导致观感不佳。
 > 如有需要可以自行下载 4K 屏幕的校色文件：【[夏普 SHP14C7](http://oss.pm-z.tech/temp_files/SHP14C7_ICC.zip)】【[友达 AUO41EB](http://oss.pm-z.tech/temp_files/AUO41EB_ICC.zip)】<br>压缩包内已包含 Dell PremierColor 软件中的全部六种配置文件。<br>使用方法：解压压缩包后，将需要的 .icm 文件复制到：`~/Library/ColorSync/Profiles` 中，然后在 `系统偏好设置→显示器→颜色` 中选择相应的配置文件。<br>建议使用 `Adobe RGB` 或 `DCI-P3` 校色文件。这两款屏幕的色域覆盖为 100% Adobe RGB 和 90% DCI-P3。
-
-# 升级 10.15.5 后可能发生 Fn 键设置改变
-升级 macOS `10.15.5` 后，`Fn 键`的功能可能发生改变。例如：原先降低亮度的热键是 `F6`，升级后会变为 `Fn + F6`，而单击 `F6` 键本身将实现其 Function 键功能，这与默认设置相反。       
-这一变化同时会影响其他系统（包括 Windows）。       
-如果需要更改回原来的模式，请在 BIOS 中进行设置：`POST Behavior → Fn Lock Options` 中选择 `Lock Mode Enable/Secondary`。
-![](https://tva1.sinaimg.cn/large/0080xEK2ly1gdwvl59kiyj30rs0fq1kx.jpg)
 
 # 目前存在的 Bug
 - [x] ~~4K 机型下 HDMI 只能输出画面，不能输出声音~~
@@ -41,12 +33,11 @@ OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pin
 - [x] ~~短时间的合盖睡眠可能导致系统崩溃~~
 - [ ] HDMI 热插拔不太完美，可能无法自动识别设备接入或移除
     > 临时解决办法：接入 / 拔除 HDMI 线后，在 `系统偏好设置→显示器`界面下按住`Option`（即`Win`键），点击右下角「侦测显示器」重新侦测接入状况即可。
-- [ ] 1080P 机型下 HDMI 可能只输出画面，不输出声音
-    > 如果愿意尝试，也可以套用 4K 版的 config 使其输出声音，当然并不保证能够成功。~~「搏一搏，单车变摩托」~~
+- [ ] 1080P 机型下 HDMI 如果设置输出声音，可能导致 HDMI 输出异常
+    > 这样的异常可以通过使机器睡眠再唤醒而暂时解决。<br>对于 1080P 机型，输出声音与否通过 `DeviceProperties`->`PciRoot(0x0)/Pci(0x1f,0x3)` 中 `alc-device-id` 和 `alc-vendor-id` 的开闭来控制。如果不注入这两个参数则 HDMI 不会输出声音。<br>鉴于有一定数量朋友反馈输出声音会导致 HDMI 输出异常，自 `20.7.16` 版本起，这两个参数在 1080P 机型配置文件下默认被注释（即默认不输出声音）。如果愿意尝试，可以尝试去除条目前的 # 号开启这两个参数，当然并不保证能够成功，请自行测试。
 - [ ] 雷电接口尚未测试，不确定功能可用性
 - [ ] 内置麦克风无法使用【目前无解】
-- [ ] 电池的容量 (Capacity) 识别错误，应为 97Wh，但实时电量显示基本准确
-- [ ] DW1820A 蓝牙暂时无法从接收其他设备的文件。
+- [ ] DW1820A 蓝牙暂时无法从接收其他设备发来的文件。
 
 # 更新日志
 ## 2020/2/16
@@ -95,6 +86,9 @@ OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pin
 增加对 DW1820A 的支持，停止对英特尔蓝牙的默认支持。
 ## 2020/6/3
 * 已无痛升级至 `10.15.6 Beta 1(19G36e)`，各项功能正常
+## 2020/7/16
+* 默认关闭 1080P 机型 HDMI 的声音输出，如有需要请手动开启
+* 增加 `DellSMCSensor`，可以通过 iStat Menus 或 MacFanControl 等软件控制风扇转速
 
 # 测试机硬件配置
 ## 已驱动 / 已知可驱动
@@ -103,7 +97,7 @@ OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pin
 * IGPU：Intel Graphics UHD 630
 * RAM：Hynix DDR4 2666Mhz / 16 GB * 2 = 32 GB RAM
 * Display：Sharp SHP14C7 @ 15.6' / 4K
-* SSD：WD PC SN520 NVMe WDC 512GB SSD
+* SSD：WD PC SN730 NVMe WDC 512GB SSD
 * Audio：Realtek ALC295（戴尔定制型号：ALC3254）（内置麦克风不能驱动）（Layout-ID = 77，选用 28 可能导致 kernel_task 占用过高而导致 CPU 高频不下）
 * Micro SD Card Reader：Realtek Memory Card Reader（系统属性「读卡器」一栏无法识别，但可以正常使用）
 * WLAN + Bluetooth：Broadcom DW1820A (`BCM94356ZEPA50DX_2`)
