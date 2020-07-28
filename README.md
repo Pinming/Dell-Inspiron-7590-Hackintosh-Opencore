@@ -2,7 +2,7 @@
 OpenCore EFI for Dell Inspiron 759x.    
 ✅ 当前 macOS 版本 `10.16 Beta 3`  `(20A5323l)` / 当前 EFI 包版本 `20.7.28 (Big Sur Test)`       
 很惭愧，只对这款机器的黑苹果进程做了一点微小的工作！🐸
-![](https://tva1.sinaimg.cn/large/0080xEK2ly1ggn8dthtolj31hc0u0u0y.jpg)
+![](https://tva1.sinaimg.cn/large/0080xEK2ly1gh6s37v8cwj31hc0u04qs.jpg)
 等到 11.0 系统能够保证稳定且与 10.15 相近的体验时，本分支将合并入 `master`。
 
 # 写在前面
