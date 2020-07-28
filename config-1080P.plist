@@ -666,9 +666,9 @@
 			<dict>
 				<key>alc-delay</key>
 				<integer>500</integer>
-				<key>alc-device-id</key>
+				<key>#alc-device-id</key>
 				<data>cJ0AAA==</data>
-				<key>alc-vendor-id</key>
+				<key>#alc-vendor-id</key>
 				<data>hoAAAA==</data>
 				<key>layout-id</key>
 				<integer>77</integer>
