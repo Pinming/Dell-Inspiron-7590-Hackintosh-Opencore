@@ -1,8 +1,9 @@
 # Dell-Inspiron-7590-Hackintosh-Opencore
 OpenCore EFI for Dell Inspiron 759x.    
-✅ 当前 macOS 版本 `10.16 Beta1`  `(20A4299v)` / 当前 EFI 包版本 `20.7.11 (Big Sur Test)`       
+✅ 当前 macOS 版本 `10.16 Beta 3`  `(20A5323l)` / 当前 EFI 包版本 `20.7.28 (Big Sur Test)`       
 很惭愧，只对这款机器的黑苹果进程做了一点微小的工作！🐸
 ![](https://tva1.sinaimg.cn/large/0080xEK2ly1ggn8dthtolj31hc0u0u0y.jpg)
+等到 11.0 系统能够保证稳定且与 10.15 相近的体验时，本分支将合并入 `master`。
 
 # 写在前面
 > 希望无论是老鸟或新手都请认真阅读本部分，为自己的安装和使用减少不必要的麻烦！
@@ -10,6 +11,7 @@ OpenCore EFI for Dell Inspiron 759x.
 > 对于 1080P 机型，核显可以直接采用 10.15 采用的 `DeviceProperties`。
 * 默认支持 `DW1820A` 网卡（推荐使用：`BCM94356ZEPA50DX_2`，无需屏蔽针脚，可直接驱动）。
 > Intel 网卡如需使用蓝牙，请参见 `IntelBT` 分支进行修改。Wifi 功能请参见仓库 [OpenIntelWireless](https://github.com/OpenIntelWireless/itlwm)。
+* 默认屏蔽 1080P 机型 HDMI 音频输出，防止发生闪屏。如需手动打开请见后文。
 * 经过测试，本 EFI 可以通过 10.15 直升和虚拟机安装两种方式成功进入系统。建议在第一阶段的安装结束（完全离开 10.15 环境后）再使用本 EFI。<br>建议在升级前于 BIOS 屏蔽无线网卡及蓝牙，防止安装过程中玄学问题的发生（有概率，并不确定）。
 
 # 目前存在的 Bug
@@ -31,6 +33,9 @@ OpenCore EFI for Dell Inspiron 759x.
 系统初次进入默认加载 sRGB 颜色配置，对于 4K 机型，这会导致观感不佳。
 > 如有需要可以自行下载 4K 屏幕的校色文件：【[夏普 SHP14C7](http://oss.pm-z.tech/temp_files/SHP14C7_ICC.zip)】【[友达 AUO41EB](http://oss.pm-z.tech/temp_files/AUO41EB_ICC.zip)】<br>压缩包内已包含 Dell PremierColor 软件中的全部六种配置文件。<br>使用方法：解压压缩包后，将需要的 .icm 文件复制到：`~/Library/ColorSync/Profiles` 中，然后在 `系统偏好设置→显示器→颜色` 中选择相应的配置文件。<br>建议使用 `Adobe RGB` 或 `DCI-P3` 校色文件。这两款屏幕的色域覆盖为 100% Adobe RGB 和 90% DCI-P3。
 
+# 更新日志
+## 2020/7/28
+* 更新了 `Lilu`、`VirtualSMC` 到最新版本，适配 10.16 Beta 3
 
 # 测试机硬件配置
 ## 已驱动 / 已知可驱动

@@ -738,14 +738,14 @@
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x1f,0x3)</key>
 			<dict>
-				<key>AAPL,slot-name</key>
-				<string>Internal@0,31,3</string>
-				<key>alc-delay</key>
-				<integer>500</integer>
 				<key>#alc-device-id</key>
 				<data>cJ0AAA==</data>
 				<key>#alc-vendor-id</key>
 				<data>hoAAAA==</data>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,31,3</string>
+				<key>alc-delay</key>
+				<integer>500</integer>
 				<key>device_type</key>
 				<string>Multimedia audio controller</string>
 				<key>hda-gfx</key>
@@ -776,7 +776,7 @@
 			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
 			<dict>
 				<key>AAPL,ig-platform-id</key>
-				<data>CQClPg==</data>
+				<data>AACbPg==</data>
 				<key>disable-external-gpu</key>
 				<data>AQAAAA==</data>
 				<key>dpcd-max-link-rate</key>
@@ -874,22 +874,6 @@
 			</dict>
 			<dict>
 				<key>BundlePath</key>
-				<string>SMCDellSensors.kext</string>
-				<key>Comment</key>
-				<string></string>
-				<key>Enabled</key>
-				<true/>
-				<key>ExecutablePath</key>
-				<string>Contents/MacOS/SMCDellSensors</string>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>BundlePath</key>
 				<string>SMCProcessor.kext</string>
 				<key>Comment</key>
 				<string></string>
@@ -913,6 +897,22 @@
 				<true/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/SMCSuperIO</string>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>MinKernel</key>
+				<string></string>
+				<key>PlistPath</key>
+				<string>Contents/Info.plist</string>
+			</dict>
+			<dict>
+				<key>BundlePath</key>
+				<string>SMCDellSensors.kext</string>
+				<key>Comment</key>
+				<string></string>
+				<key>Enabled</key>
+				<true/>
+				<key>ExecutablePath</key>
+				<string>Contents/MacOS/SMCDellSensors</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
@@ -1492,8 +1492,8 @@
 	<dict>
 		<key>BlessOverride</key>
 		<array>
-			<string>\System\Library\CoreServices\boot.efi</string>
 			<string>\EFI\Microsoft\Boot\bootmgfw.efi</string>
+			<string>\System\Library\CoreServices\boot.efi</string>
 		</array>
 		<key>Boot</key>
 		<dict>
@@ -1638,17 +1638,11 @@
 				<key>SystemAudioVolume</key>
 				<data>Rg==</data>
 				<key>boot-args</key>
-				<string>-v debug=0x100 npci=0x2000 darkwake=1 brcmfx-country=#a -brcmfxbeta keepsyms=1 agdpmod=vit9696 igfxfw=2 alcid=77</string>
-				<key>run-efi-updater</key>
-				<string>No</string>
+				<string>-v debug=0x100 npci=0x2000 darkwake=1 brcmfx-country=#a -brcmfxbeta alcid=77 keepsyms=1 agdpmod=vit9696 igfxfw=2 vsmcgen=1</string>
 				<key>csr-active-config</key>
-				<data>5wMAAA==</data>
+				<data>dwAAAA==</data>
 				<key>prev-lang:kbd</key>
 				<data>emgtSGFuczoyNTI=</data>
-				<key>booter-fileset-kernel</key>
-				<data>AA==</data>
-				<key>booter-fileset-basesystem</key>
-				<data>AA==</data>
 			</dict>
 		</dict>
 		<key>Delete</key>
@@ -1665,8 +1659,7 @@
 			<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
 			<array>
 				<string>boot-args</string>
-				<string>booter-fileset-kernel</string>
-				<string>booter-fileset-basesystem</string>
+				<string>csr-active-config</string>
 			</array>
 		</dict>
 		<key>LegacyEnable</key>
@@ -1743,7 +1736,7 @@
 			<key>HideVerbose</key>
 			<true/>
 			<key>JumpstartHotPlug</key>
-			<false/>
+			<true/>
 			<key>MinDate</key>
 			<integer>0</integer>
 			<key>MinVersion</key>
