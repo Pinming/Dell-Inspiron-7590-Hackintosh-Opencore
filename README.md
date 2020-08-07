@@ -1,8 +1,8 @@
 # Dell-Inspiron-7590-Hackintosh-Opencore
 OpenCore EFI for Dell Inspiron 759x.    
-✅ 当前 macOS 版本 `10.16 Beta 3`  `(20A5323l)` / 当前 EFI 包版本 `20.7.28 (Big Sur Test)`       
+✅ 当前 macOS 版本 `11.0 DB4`  `(20A5343i)` / 当前 EFI 包版本 `20.8.7 (Big Sur Test)`       
 很惭愧，只对这款机器的黑苹果进程做了一点微小的工作！🐸
-![](https://tva1.sinaimg.cn/large/0080xEK2ly1gh6s37v8cwj31hc0u04qs.jpg)
+![](https://oss.pm-z.tech/img/11111.jpg)
 等到 11.0 系统能够保证稳定且与 10.15 相近的体验时，本分支将合并入 `master`。
 
 # 写在前面
@@ -33,9 +33,29 @@ OpenCore EFI for Dell Inspiron 759x.
 系统初次进入默认加载 sRGB 颜色配置，对于 4K 机型，这会导致观感不佳。
 > 如有需要可以自行下载 4K 屏幕的校色文件：【[夏普 SHP14C7](http://oss.pm-z.tech/temp_files/SHP14C7_ICC.zip)】【[友达 AUO41EB](http://oss.pm-z.tech/temp_files/AUO41EB_ICC.zip)】<br>压缩包内已包含 Dell PremierColor 软件中的全部六种配置文件。<br>使用方法：解压压缩包后，将需要的 .icm 文件复制到：`~/Library/ColorSync/Profiles` 中，然后在 `系统偏好设置→显示器→颜色` 中选择相应的配置文件。<br>建议使用 `Adobe RGB` 或 `DCI-P3` 校色文件。这两款屏幕的色域覆盖为 100% Adobe RGB 和 90% DCI-P3。
 
+# OpenCore GUI 界面资源包
+config 默认已经启用了 GUI 界面，但由于资源包体积较大（约 100MB），故需要自行下载。  
+如果不下载资源包则会自动显示为文字界面。  
+资源包：[`acidanthera/OcBinaryData`](https://github.com/acidanthera/OcBinaryData)  
+下载完后将 `Resources` 文件夹拷贝至 `OC` 文件夹（即与 `config.plist` 并列），之后就可以使用 GUI 界面了。  
+界面即白苹果启动器原生界面：（图源网络）  
+![](https://imacos.top/wp-content/uploads/2020/06/%E6%88%AA%E5%B1%8F2020-06-19-%E4%B8%8B%E5%8D%882.09.20.png)
+
+# 升级到 11.0 DB4 需要注意
+在 OTA 升级过程最后一次启动将进入系统时，可能会卡进度条。如出现该情况需要重置一次 NVRAM。
+
+# 启动器中卷标显示为 `Preboot` 的解决办法
+重新安装一遍 `Intel Power Gadget`。其安装过程会重写 `Preboot`，能够完成系统升级 / 安装时没有完成的这一步骤，使得卷标正常显示。
+![](https://oss.pm-z.tech/img/Screen%20Shot%202020-08-07%20at%2011.58.38%20PM.png)
+
 # 更新日志
 ## 2020/7/28
 * 更新了 `Lilu`、`VirtualSMC` 到最新版本，适配 10.16 Beta 3
+
+## 2020/8/7
+* 更新  `OpenCore` 至 `2020-08-07` 版本，适配 10.16 Beta 4
+* 更新 `AirportBrcmFixup` 至 `2.0.9`
+* 默认启用 OpenCore 图形化界面（资源包需自行下载）
 
 # 测试机硬件配置
 ## 已驱动 / 已知可驱动
