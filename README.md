@@ -1,8 +1,9 @@
 # Dell-Inspiron-7590-Hackintosh-Opencore
 OpenCore EFI for Dell Inspiron 759x.    
-✅ 当前 macOS 版本 `11.0 DB4`  `(20A5343i)` / 当前 EFI 包版本 `20.8.7 (Big Sur Test)`       
+✅ 当前 macOS 版本 `11.0 DB5`  `(20A5354i)` / 当前 EFI 包版本 `20.8.7 (Big Sur Test)`       
+✅ 可从 DB4 无痛升级。
 很惭愧，只对这款机器的黑苹果进程做了一点微小的工作！🐸
-![](https://oss.pm-z.tech/img/11111.jpg)
+![](https://tva1.sinaimg.cn/large/0080xEK2ly1ghxf0391jbj31hc0u0qv5.jpg)
 等到 11.0 系统能够保证稳定且与 10.15 相近的体验时，本分支将合并入 `master`。
 
 # 写在前面
