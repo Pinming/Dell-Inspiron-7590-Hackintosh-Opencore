@@ -1,7 +1,6 @@
 # Dell-Inspiron-7590-Hackintosh-Opencore
 OpenCore EFI for Dell Inspiron 759x.    
-✅ 当前 macOS 版本 `11.0 DB6`  `(20A5364e)` / 当前 EFI 包版本 `20.8.7 (Big Sur Test)`         
-✅ 该版本 EFI 支持从 DB5 无痛升级。
+✅ 当前 macOS 版本 `11.0 DB8`  `(20A5374i)` / 当前 EFI 包版本 `20.8.7 (Big Sur Test)`         
 很惭愧，只对这款机器的黑苹果进程做了一点微小的工作！🐸
 ![](https://tva1.sinaimg.cn/large/0080xEK2ly1ghxf0391jbj31hc0u0qv5.jpg)
 等到 11.0 系统能够保证稳定且与 10.15 相近的体验时，本分支将合并入 `master`。
@@ -14,6 +13,7 @@ OpenCore EFI for Dell Inspiron 759x.
 > Intel 网卡如需使用蓝牙，请参见 `IntelBT` 分支进行修改。Wifi 功能请参见仓库 [OpenIntelWireless](https://github.com/OpenIntelWireless/itlwm)。
 * 默认屏蔽 1080P 机型 HDMI 音频输出，防止发生闪屏。如需手动打开请见后文。
 * 经过测试，本 EFI 可以通过 10.15 直升和虚拟机安装两种方式成功进入系统。建议在第一阶段的安装结束（完全离开 10.15 环境后）再使用本 EFI。<br>建议在升级前于 BIOS 屏蔽无线网卡及蓝牙，防止安装过程中玄学问题的发生（有概率，并不确定）。
+* 建议在安装完成后，将 config.plist 中 `csr-active-config` 的值改为 `00000000`，打开系统 SIP 保护以正常使用 OTA 更新；否则可能检测不到更新。
 
 # 目前存在的 Bug
 - [ ] 【新增】由于使用 EDID 注入，4K 机型目前只能启用 48Hz 刷新率。
