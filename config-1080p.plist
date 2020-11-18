@@ -26,6 +26,14 @@
 				<key>Comment</key>
 				<string></string>
 				<key>Enabled</key>
+				<false/>
+				<key>Path</key>
+				<string>SSDT-I2C.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string></string>
+				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
 				<string>SSDT-AWAC.aml</string>
@@ -51,6 +59,14 @@
 				<string></string>
 				<key>Enabled</key>
 				<true/>
+				<key>Path</key>
+				<string>SSDT-RMDGPU.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string></string>
+				<key>Enabled</key>
+				<false/>
 				<key>Path</key>
 				<string>SSDT-DGPU.aml</string>
 			</dict>
@@ -999,7 +1015,7 @@
 				<key>Comment</key>
 				<string></string>
 				<key>Enabled</key>
-				<false/>
+				<true/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/SMCSuperIO</string>
 				<key>MaxKernel</key>
@@ -1038,24 +1054,6 @@
 				<true/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/VerbStub</string>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>Arch</key>
-				<string>Any</string>
-				<key>BundlePath</key>
-				<string>VoodooI2C.kext</string>
-				<key>Comment</key>
-				<string></string>
-				<key>Enabled</key>
-				<true/>
-				<key>ExecutablePath</key>
-				<string>Contents/MacOS/VoodooI2C</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
@@ -1110,6 +1108,24 @@
 				<true/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/VoodooInput</string>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>MinKernel</key>
+				<string></string>
+				<key>PlistPath</key>
+				<string>Contents/Info.plist</string>
+			</dict>
+			<dict>
+				<key>Arch</key>
+				<string>Any</string>
+				<key>BundlePath</key>
+				<string>VoodooI2C.kext</string>
+				<key>Comment</key>
+				<string></string>
+				<key>Enabled</key>
+				<true/>
+				<key>ExecutablePath</key>
+				<string>Contents/MacOS/VoodooI2C</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
@@ -1658,7 +1674,7 @@
 				<key>SystemAudioVolume</key>
 				<data>Rg==</data>
 				<key>boot-args</key>
-				<string>-v brcmfx-country=#a brcmfx-driver=2 keepsyms=1 agdpmod=vit9696 igfxfw=2</string>
+				<string>brcmfx-country=#a brcmfx-driver=2 keepsyms=1 agdpmod=vit9696 igfxfw=2</string>
 				<key>csr-active-config</key>
 				<data>AAAAAA==</data>
 				<key>run-efi-updater</key>
@@ -1728,7 +1744,7 @@
 			<key>AdviseWindows</key>
 			<false/>
 			<key>MLB</key>
-			<string>C029111304N0000CB</string>
+			<string>C02926300GU0000JA</string>
 			<key>ProcessorType</key>
 			<integer>1793</integer>
 			<key>SystemMemoryStatus</key>
@@ -1740,9 +1756,9 @@
 			<key>SystemProductName</key>
 			<string>MacBookPro15,3</string>
 			<key>SystemSerialNumber</key>
-			<string>C02YFZZYLVCG</string>
+			<string>C02YXAZGLVCG</string>
 			<key>SystemUUID</key>
-			<string>82DEB31D-81B9-494E-82CA-4916C0663BB6</string>
+			<string>7C1C2C11-6B74-497D-A789-DB72B1C4D713</string>
 		</dict>
 		<key>UpdateDataHub</key>
 		<true/>
