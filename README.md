@@ -1,8 +1,8 @@
 # Dell-Inspiron-7590-Hackintosh-Opencore
 OpenCore EFI for Dell Inspiron 759x.    
-✅ 当前 macOS 版本 `11.0.1 RC`  `(20B28)` / 当前 EFI 包版本 `20.8.7 (Big Sur Test)`         
+✅ 当前 macOS 版本 `11.1 Beta`  `(20C5048k)` / 当前 EFI 包版本 `20.11.18 (Big Sur Test)`         
 很惭愧，只对这款机器的黑苹果进程做了一点微小的工作！🐸
-![](https://tva1.sinaimg.cn/large/0080xEK2ly1ghxf0391jbj31hc0u0qv5.jpg)
+![](https://img03.sogoucdn.com/app/a/100520146/1b0219f964eb5d5f1b820af13fcd1d19)
 【**请注意 11.0 与 10.15 的 EFI 暂时不互通！**】等到 11.0 系统能够保证稳定且与 10.15 相近的体验时，本分支将合并入 `master`。
 
 # 写在前面
@@ -15,7 +15,7 @@ OpenCore EFI for Dell Inspiron 759x.
 * 建议在安装完成后，将 config.plist 中 `csr-active-config` 的值改为 `00000000`，打开系统 SIP 保护以正常使用 OTA 更新；否则可能检测不到更新。
 
 # 目前存在的 Bug
-11.0 版本目前 Bug 较多，不建议日常使用！
+11.0 版本目前 Bug 较多，不建议作为主力系统！
 - [ ] ~启动间歇性出现卡 240s 问题，正在尝试修复。~
     > 应该已经修复，烦请各位测试！
 - [ ] 由于使用 EDID 注入，4K 机型目前只能启用 48Hz 刷新率。
