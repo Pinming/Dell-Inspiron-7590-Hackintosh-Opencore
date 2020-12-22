@@ -1,24 +1,24 @@
 # Dell-Inspiron-7590-Hackintosh-Opencore
 OpenCore EFI for Dell Inspiron 759x.    
-✅ 当前 macOS 版本 `11.1 Beta`  `(20C5048k)` / 当前 EFI 包版本 `20.11.18 (Big Sur Test)`         
+✅ 当前 macOS 版本 `11.2 Beta` `(20D5029f)` / 当前 EFI 包版本 `20.12.22 (Big Sur Test)`         
 很惭愧，只对这款机器的黑苹果进程做了一点微小的工作！🐸
-![](https://img03.sogoucdn.com/app/a/100520146/1b0219f964eb5d5f1b820af13fcd1d19)
-【**请注意 11.0 与 10.15 的 EFI 暂时不互通！**】等到 11.0 系统能够保证稳定且与 10.15 相近的体验时，本分支将合并入 `master`。
+![](https://tva1.sinaimg.cn/large/0080xEK2ly1glwphwp121j31hc0u0npe.jpg)
+❌【**请注意 11.0 与 10.15 的 EFI 暂时不互通！**】本 EFI 已实现与 10.15 一致的体验，但该 EFI 仍不能进入 10.15，因此暂时不并入 `master`。
 
 # 写在前面
 > 希望无论是老鸟或新手都请认真阅读本部分，为自己的安装和使用减少不必要的麻烦！
 > 对于 1080P 机型，核显可以直接采用 10.15 采用的 `DeviceProperties`。
 * 默认支持 `DW1820A` 网卡（推荐使用：`BCM94356ZEPA50DX_2`，无需屏蔽针脚，可直接驱动）。
-> Intel 网卡如需使用蓝牙，请参见 `IntelBT` 分支进行修改。Wifi 功能请参见仓库 [OpenIntelWireless](https://github.com/OpenIntelWireless/itlwm)。
+> Intel 网卡如需使用蓝牙，请参见 `IntelBT` 分支进行修改。Wifi 功能请参见仓库 [OpenIntelWireless](https://github.com/OpenIntelWireless/itlwm)。<br>`IntelBT` 分支已「年久失修」，**无法直接在 11.0 下套用**，可能在近期更新，您也可以在现有 `BigSur` 分支基础上自行修改。
 * 默认屏蔽 1080P 机型 HDMI 音频输出，防止发生闪屏。如需手动打开请见后文。
 * 经过测试，本 EFI 可以通过 10.15 直升和虚拟机安装两种方式成功进入系统。**对于直升建议在第一阶段的安装结束（完全离开 10.15 环境后 / 应该是一或两次重启后）再使用本 EFI**。<br>建议在升级前于 BIOS 屏蔽无线网卡及蓝牙，防止安装过程中玄学问题的发生（有概率，并不确定）。
-* 建议在安装完成后，将 config.plist 中 `csr-active-config` 的值改为 `00000000`，打开系统 SIP 保护以正常使用 OTA 更新；否则可能检测不到更新。
+* config.plist 中 `csr-active-config` 默认值为 `00000000`，打开系统 SIP 保护，以正常使用 OTA 更新；否则可能检测不到更新。
 
 # 目前存在的 Bug
 11.0 版本目前 Bug 较多，不建议作为主力系统！
-- [ ] ~启动间歇性出现卡 240s 问题，正在尝试修复。~
-    > 应该已经修复，烦请各位测试！
-- [ ] 由于使用 EDID 注入，4K 机型目前只能启用 48Hz 刷新率。
+- [x] ~启动间歇性出现卡 240s 问题~
+- [x] 由于使用 EDID 注入，4K 机型目前只能启用 48Hz 刷新率。
+    > 友达屏可以原生支持 WhateverGreen 最大时钟频率破解；夏普屏需要通过注入友达屏 EDID 来实现。<br>因此友达屏可以选择不注入 EDID，不过是否注入理论上没有区别，config.plist 中默认注入。
 - [ ] HDMI 热插拔不太完美，可能无法自动识别设备接入或移除
     > 临时解决办法：接入 / 拔除 HDMI 线后，在 `系统偏好设置→显示器`界面下按住`Option`（即`Win`键），点击右下角「侦测显示器」重新侦测接入状况即可。
 - [ ] 1080P 机型下 HDMI 如果设置输出声音，可能导致 HDMI 输出异常
@@ -32,7 +32,7 @@ OpenCore EFI for Dell Inspiron 759x.
 感谢 @[tctien342](https://github.com/tctien342) 的贡献！
 
 # 4K 机型颜色配置文件
-系统初次进入默认加载 sRGB 颜色配置，对于 4K 机型，这会导致观感不佳。
+系统初次进入可能会默认加载 sRGB 颜色配置，对于 4K 机型，这会导致观感不佳。
 > 如有需要可以自行下载 4K 屏幕的校色文件：【[夏普 SHP14C7](http://oss.pm-z.tech/temp_files/SHP14C7_ICC.zip)】【[友达 AUO41EB](http://oss.pm-z.tech/temp_files/AUO41EB_ICC.zip)】<br>压缩包内已包含 Dell PremierColor 软件中的全部六种配置文件。<br>使用方法：解压压缩包后，将需要的 .icm 文件复制到：`~/Library/ColorSync/Profiles` 中，然后在 `系统偏好设置→显示器→颜色` 中选择相应的配置文件。<br>建议使用 `Adobe RGB` 或 `DCI-P3` 校色文件。这两款屏幕的色域覆盖为 100% Adobe RGB 和 90% DCI-P3。
 
 # OpenCore GUI 界面资源包
@@ -43,25 +43,23 @@ config 默认已经启用了 GUI 界面，但由于资源包体积较大（约 1
 界面即白苹果启动器原生界面：（图源网络）  
 ![](https://imacos.top/wp-content/uploads/2020/06/%E6%88%AA%E5%B1%8F2020-06-19-%E4%B8%8B%E5%8D%882.09.20.png)
 
-# 升级到 11.0 DB4 需要注意
-在 OTA 升级过程最后一次启动将进入系统时，可能会卡进度条。如出现该情况需要重置一次 NVRAM。
-
-# 启动器中卷标显示为 `Preboot` 的解决办法
-重新安装一遍 `Intel Power Gadget`。其安装过程会重写 `Preboot`，能够完成系统升级 / 安装时没有完成的这一步骤，使得卷标正常显示。
-![](https://oss.pm-z.tech/img/Screen%20Shot%202020-08-07%20at%2011.58.38%20PM.png)
-
 # 更新日志
 ## 2020/7/28
 * 更新了 `Lilu`、`VirtualSMC` 到最新版本，适配 10.16 Beta 3
 
 ## 2020/8/7
-* 更新  `OpenCore` 至 `2020-08-07` 版本，适配 10.16 Beta 4
+* 更新 `OpenCore` 至 `2020-08-07` 版本，适配 10.16 Beta 4
 * 更新 `AirportBrcmFixup` 至 `2.0.9`
 * 默认启用 OpenCore 图形化界面（资源包需自行下载）
 
 ## 2020/11/18
 * OC、Drivers、Kexts、ACPI 大幅更新
 * （可能）修复了开机卡 240s 的问题
+
+## 2020/12/22
+* 更新 `Lilu` 至 `1.5.0 (2020-12-16)`
+* 更新 `WhateverGreen` 至 `1.4.6 (2020-12-16)`，应用 `-igfxmfc`，提升最大时钟频率，使得 4K 屏能在 60Hz 刷新率下工作
+* 更新 `OpenCore` 至 `0.6.5 (2020-12-16)`
 
 # 测试机硬件配置
 ## 已驱动 / 已知可驱动
