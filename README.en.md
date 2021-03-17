@@ -1,16 +1,16 @@
 # Dell-Inspiron-7590-Hackintosh-Opencore
 OpenCore EFI for Dell Inspiron 759x.        
-✅ Current macOS version: `10.15.6` `(19G73)` / Current EFI version: `20.7.16`      
+✅ Current macOS version:  `11.3 Beta 4` `(20E5210c)`  / Current EFI version: `21.3.18`      
+✅ Support macOS `11.0.*`, `11.1.*`, `11.2.*` & `11.3 Beta 4`      
+❌ This branch will no longer supports `macOS 10.15`, if you need install macOS `10.15`, please use branch `Catalina_Backup`.
+❌ DO NOT install `macOS 11.3 Beta 1~3`. It can't boot normally.
 In theory, this EFI supports for all models of Dell Inspiron 7590 / 7591 Series.
-![](https://tva1.sinaimg.cn/large/0080xEK2ly1gfefwkavacj31hc0u01kx.jpg)
+![](https://img03.sogoucdn.com/app/a/100540022/2021031801114349486906.jpg)
 
 # Introduction
-* The EFI for reference only in present. All hardware can normally work but wireless card have not been tested yet.
 * The EFI is based on @[tctien342](https://github.com/tctien342/Dell-Inspiron-7591-Hackintosh)'s repo. Thanks!
 * `config.plist` is designed for 4K model and `config-1080P.plist` for 1080P model. For users of 1080P model, please rename `config-1080P.plist` to `config.plist` first.
 * [⚠️ **IMPORTANT**] **Default strategy for Bluetooth & WIFI**: <br> The default settings are designed for Broadcom DW1820A (`BCM94356ZEPA50DX_2` is highly recommended). If you need to make Intel bluetooth work, please enable those relative kexts in config.plist manually.
-> For users who use Intel Bluetooth, please go to the branch `IntelBT`.
-
 * Version number is same as the date of each commit. (e.g. `20.3.6` is the version which updated on 2020/3/6)
 
 # Fix the Combojack Support
@@ -22,9 +22,6 @@ It will load the default sRGB color profile. For 4K model, it is an incorrect pr
 > Download: ([Sharp SHP14C7](http://oss.pm-z.tech/temp_files/SHP14C7_ICC.zip)) ([AUO AUO41EB](http://oss.pm-z.tech/temp_files/AUO41EB_ICC.zip))<br>Each package includes all 6 profiles which are extracted from Dell PremierColor. <br>Copy .icm files to `~/Library/ColorSync/Profiles` and apply the color profile you need in `System Preferences→Displays→Color`.<br>Using `Adobe RGB` or `DCI-P3` profile is recommended, due to the 4K screen covers 100% Adobe RGB and 90% DCI-P3.
 
 # Known Problems
-- [x] ~~HDMI can't output audio on 4K model.~~
-- [x] ~~Audio Card sometimes not working if mac installed in fast NVME drive, due to the loading order of `AppleALC` & `AppleHDAController`.~~
-- [x] ~~A short time sleep with lid-closing will lead to kernel panic.~~
 - [ ] It won't response automatically after HDMI cable plug in or plug out. You possibly need to refresh the display status manually.
     > Temporary Solution: After plugging in or plugging out HDMI cable, hold  `Option` button (`Windows` Button on Hackintosh) on `System Preferences→Displays`, and click button `Detect Displays` to re-detect the monitors.
 - [ ] Monitor maybe blink while HDMI plugged in with audio output on 1080P model.
@@ -80,7 +77,10 @@ The macOS has been upgraded to `10.15.6 Beta (19G36e)`.
 ## 2020/7/16
 * Disabled HDMI audio output for 1080P model's default setting.
 * Added `DellSMCSensors` to control speed of fans.
-
+## 2021/3/18
+* Abandoned support for macOS 10.15
+* Updated some kexts
+* Updated `Opencore` to `0.6.8 (2021-03-05)`
 # Tested Hardware
 ## Can be driven
 **Dell Inspiron 7590** with Sharp SHP14C7 4K Display
@@ -96,5 +96,4 @@ The macOS has been upgraded to `10.15.6 Beta (19G36e)`.
 ## Can not be driven
 * Nvidia Geforce GTX 1650
 * Goodix fingerpint reader
-* Intel Wireless-AC 9560 (Wifi can only work at slow speed / Bluetooth can work normally)
 
