@@ -31,7 +31,7 @@ OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pin
 
 # 目前存在的 Bug
 - [x] ~启动间歇性出现卡 240s 问题~
-- [x] 由于使用 EDID 注入，4K 机型目前只能启用 48Hz 刷新率。
+- [x] ~由于使用 EDID 注入，4K 机型目前只能启用 48Hz 刷新率。~
     > 两款 4K 屏目前均不需要注入 EDID 即可以 60Hz 显示。
 - [ ] HDMI 热插拔不太完美，可能无法自动识别设备接入或移除
     > 临时解决办法：接入 / 拔除 HDMI 线后，在 `系统偏好设置→显示器`界面下按住`Option`（即`Win`键），点击右下角「侦测显示器」重新侦测接入状况即可。
