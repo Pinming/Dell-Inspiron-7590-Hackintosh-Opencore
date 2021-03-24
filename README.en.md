@@ -1,7 +1,7 @@
 # Dell-Inspiron-7590-Hackintosh-Opencore
 OpenCore EFI for Dell Inspiron 759x.        
-✅ Current macOS version:  `11.3 Beta 4` `(20E5210c)`  / Current EFI version: `21.3.18`      
-✅ Support macOS `11.0.*`, `11.1.*`, `11.2.*` & `11.3 Beta 4`      
+✅ Current macOS version:  `11.3 Beta 5` `(20E5217a)`  / Current EFI version: `21.3.18`      
+✅ Support macOS `11.0.*`, `11.1.*`, `11.2.*` & `11.3 Beta (>=4)`      
 ❌ This branch will no longer supports `macOS 10.15`, if you need install macOS `10.15`, please use branch `Catalina_Backup`.
 ❌ DO NOT install `macOS 11.3 Beta 1~3`. It can't boot normally.
 In theory, this EFI supports for all models of Dell Inspiron 7590 / 7591 Series.

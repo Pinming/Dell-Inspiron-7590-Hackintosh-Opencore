@@ -1,8 +1,8 @@
 # Dell-Inspiron-7590-Hackintosh-Opencore
 OpenCore EFI for Dell Inspiron 759x.   _[English Version](https://github.com/Pinming/Dell-Inspiron-7590-Hackintosh-Opencore/blob/master/README.en.md)_       
 
-✅ 当前 macOS 版本 `11.3 Beta 4` `(20E5210c)` / 当前 EFI 包版本 `21.3.18`  
-✅ 支持 macOS `11.0`、`11.1`、`11.2` 全部版本以及 `11.3 Beta 4` (后续版本如无意外应该也支持)       
+✅ 当前 macOS 版本 `11.3 Beta 5` `(20E5217a)` / 当前 EFI 包版本 `21.3.18`  
+✅ 支持 macOS `11.0`、`11.1`、`11.2` 全部版本以及 `11.3 Beta (>=4)`
 ❌ 本分支*不再支持* `macOS 10.15`，如需安装 `10.15` 请参考 `Catalina_Backup` 分支         
 ❌ 请注意：*不要安装* `macOS 11.3 Beta 1 ~ 3` 版，上述版本无法正常进入系统      
 ⚠️ 本 EFI 在仅在 4K 夏普屏机型上经过测试，本文所有所述测试情况均基于本机型得出。      
